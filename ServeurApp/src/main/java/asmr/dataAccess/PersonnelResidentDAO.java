@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import asmr.Integration.JDBC.ConnectionBuilder;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.PersonnelResident;
 
 import java.sql.ResultSet;

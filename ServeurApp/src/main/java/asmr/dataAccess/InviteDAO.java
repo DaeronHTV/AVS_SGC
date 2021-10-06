@@ -1,7 +1,7 @@
 package asmr.dataAccess;
 
 import asmr.Integration.JDBC.ConnectionBuilder;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.Invite;
 
 import java.sql.PreparedStatement;

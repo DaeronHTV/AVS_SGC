@@ -1,4 +1,4 @@
-package asmr.visioPadAPI;
+package miage.sgc.api.mail;
 
 import java.io.IOException;
 

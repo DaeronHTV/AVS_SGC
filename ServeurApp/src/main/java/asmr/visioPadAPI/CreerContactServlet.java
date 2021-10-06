@@ -19,7 +19,7 @@ import asmr.dataAccess.PersonneDAO;
 import asmr.dataAccess.ResidentDAO;
 import asmr.dataAccess.UniteDAO;
 import asmr.dataAccess.UtilisateurDAO;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.Contact;
 import asmr.visiopad.ContactResident;
 import asmr.visiopad.Etablissement;

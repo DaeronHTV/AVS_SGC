@@ -4,9 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
-
 import asmr.Integration.JDBC.ConnectionBuilder;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.Affectation;
 
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package asmr.Integration.mail.mailUtilities;
+package miage.mail.transport;
 
 import java.io.IOException;
 import java.util.Properties;

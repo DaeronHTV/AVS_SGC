@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import asmr.dataAccess.DAOFactory;
 import asmr.dataAccess.SqlDAO;
 import asmr.dataAccess.UtilisateurDAO;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.CreneauVisio;
 import asmr.visiopad.Utilisateur;
 

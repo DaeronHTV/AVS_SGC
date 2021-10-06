@@ -2,7 +2,7 @@ package asmr.dataAccess;
 
 import asmr.Integration.JDBC.ConnectionBuilder;
 import asmr.visiopad.Contact;
-import asmr.dataUtilities.log.*;
+import Avsoft.Helper.Logs.LogHelper;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;

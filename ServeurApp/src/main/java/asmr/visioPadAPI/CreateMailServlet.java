@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import asmr.Integration.mail.MailService;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 
 public class CreateMailServlet extends HttpServlet{
     private static final long serialVersionUID = 1L;

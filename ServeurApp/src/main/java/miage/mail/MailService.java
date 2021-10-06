@@ -1,4 +1,4 @@
-package asmr.Integration.mail;
+package miage.mail;
 
 import java.util.ArrayList;
 import java.util.Properties;

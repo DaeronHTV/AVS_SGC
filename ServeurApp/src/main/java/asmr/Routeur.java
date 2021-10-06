@@ -7,11 +7,6 @@ package asmr;
  * @since 29/01/2021
  */
 public final class Routeur {
-    @Deprecated
-    public static final String Contact_msg = "data/MailTypeHtml/Contact.html";
-    @Deprecated
-    public static final String MailSConfig = "data/config/MailSConnections.xml";
-
     public static final String MailConfig = "data/config/MailConnections.xml";
     public static final String BDDConfig = "data/config/ConnectioString.xml";
     public static final String AccountCreate_msg = "data/MailTypeHtml/ConfirmationInscription.html";

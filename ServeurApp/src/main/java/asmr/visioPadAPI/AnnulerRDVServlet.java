@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import asmr.dataAccess.CreneauVisioDAO;
 import asmr.dataAccess.RendezVousDAO;
-import asmr.dataUtilities.log.LogHelper;
+import Avsoft.Helper.Logs.LogHelper;
 import asmr.visiopad.CreneauVisio;
 import asmr.visiopad.RendezVous;
 import asmr.visiopad.enumeration.EtatRDV;
