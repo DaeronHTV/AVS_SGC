@@ -1,4 +1,4 @@
-package miage.mail;
+package Miage.mail;
 
 import java.util.ArrayList;
 import java.util.Properties;

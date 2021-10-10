@@ -1,4 +1,4 @@
-package miage.sgc.api.mail;
+package Miage.sgc.api.mail;
 
 import java.io.IOException;
 

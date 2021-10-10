@@ -1,4 +1,4 @@
-package miage.mail.transport;
+package Miage.mail.transport;
 
 import asmr.Routeur;
 import Avsoft.Helper.FileHelper;

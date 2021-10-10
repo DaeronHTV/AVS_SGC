@@ -88,11 +88,33 @@
     	<artifactId>jetty-servlet</artifactId>
     	<version>${jettyServletVersion}</version>
     </dependency>
+    <!-- MAVENS POUR JDBC DATABASE -->
     <dependency>
         <groupId>com.oracle.database.jdbc</groupId>
         <artifactId>ojdbc11</artifactId>
         <version>21.1.0.0</version>
     </dependency>
+    <dependency>
+   		<groupId>com.microsoft.sqlserver</groupId>
+   		<artifactId>mssql-jdbc</artifactId>
+   		<version>9.4.0.jre11</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.xerial</groupId>
+    	<artifactId>sqlite-jdbc</artifactId>
+    	<version>3.8.7</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongodb-jdbc</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.mariadb.jdbc</groupId>
+    	<artifactId>mariadb-java-client</artifactId>
+    	<version>2.7.4</version>
+	</dependency>
+    <!-- FIN DES MAVENS POUR JDBC DATABASE -->
    <dependency>
     <groupId>javax.annotation</groupId>
     <artifactId>javax.annotation-api</artifactId>

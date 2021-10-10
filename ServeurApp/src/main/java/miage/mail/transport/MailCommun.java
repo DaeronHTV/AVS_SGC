@@ -1,4 +1,4 @@
-package miage.mail.transport;
+package Miage.mail.transport;
 
 import java.io.IOException;
 import java.util.Properties;

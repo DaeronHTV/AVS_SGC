@@ -24,6 +24,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/IM2AG/Desktop/sgc-m2miage/ServeurApp/lib/AvsoftJar-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Avanzino.A/Desktop/MIAGE/Système de Gestion des Connaissances/Desmoulins/sgc-m2miage/ServeurApp/lib/AvsoftJar-0.0.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

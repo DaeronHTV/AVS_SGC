@@ -1,4 +1,4 @@
-package miage.sgc;
+package Miage.sgc;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;

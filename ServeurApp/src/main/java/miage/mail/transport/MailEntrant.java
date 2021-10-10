@@ -1,4 +1,4 @@
-package miage.mail.transport;
+package Miage.mail.transport;
 
 public class MailEntrant {
 
