@@ -2,16 +2,11 @@ package Miage.database;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import javax.xml.bind.JAXBException;
-
 import Avsoft.Helper.Logs.LogHelper;
 import Avsoft.Manager.Config.ConfigManager;
 import Avsoft.Bdd.Config.ConnectionString;
-import Avsoft.Helper.Logs.LogHelper;
-
 import java.sql.Connection;
-import java.sql.Driver;
 
 public class ConnectionBuilder {
 	private static ConfigManager config;
@@ -24,7 +19,9 @@ public class ConnectionBuilder {
     public static IDBConnection ConnectionFromConfig() {
     	try {
     		ConnectionString strings = config.getConnectionStrings().connectionString;
+    		LogHelper.info("Chargement du provider de la base...");
     		Class.forName(strings.providerName);
+    		LogHelper.info("Creation de la connection a la base...");
     		return new DBConnection(getConnection(strings), strings.providerName);
     	}
     	catch(SQLException sqle) { LogHelper.error("Error lors de la connection a la base de donnees !", sqle); }

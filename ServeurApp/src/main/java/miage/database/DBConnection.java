@@ -12,13 +12,11 @@ public class DBConnection implements IDBConnection{
 
 	@Override
 	public DBTypeEnum getConnectionType() {
-		// TODO Auto-generated method stub
-		return null;
+		return typeBase;
 	}
 
 	@Override
 	public Connection getConnection() {
-		// TODO Auto-generated method stub
 		return connection;
 	}
 
