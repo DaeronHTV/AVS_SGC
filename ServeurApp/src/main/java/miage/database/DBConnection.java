@@ -8,16 +8,12 @@ public class DBConnection implements IDBConnection{
 	
 	public DBConnection(Connection connection, String provider) {
 		this.connection = connection;
+		this.typeBase = DBTypeEnum.fromProvider(provider);
 	}
 
 	@Override
-	public DBTypeEnum getConnectionType() {
-		return typeBase;
-	}
+	public DBTypeEnum getConnectionType() { return typeBase; }
 
 	@Override
-	public Connection getConnection() {
-		return connection;
-	}
-
+	public Connection getConnection() { return connection; }
 }

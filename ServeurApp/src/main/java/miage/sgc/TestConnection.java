@@ -11,6 +11,8 @@ public class TestConnection {
 		IDBConnection test = ConnectionBuilder.ConnectionFromConfig();
 		Connection connection = test.getConnection();
 		System.out.println(connection.getCatalog());
+		System.out.println(java.util.UUID.randomUUID());
+		System.out.println(ConnectionBuilder.GUID(test));
 		
 	}
 }

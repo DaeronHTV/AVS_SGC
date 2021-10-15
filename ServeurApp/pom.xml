@@ -115,6 +115,13 @@
     	<version>2.7.4</version>
 	</dependency>
     <!-- FIN DES MAVENS POUR JDBC DATABASE -->
+    <!-- MAVEN POUR AZURE ACTIVE DIRECTORY -->
+    <dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>msal4j</artifactId>
+    <version>1.11.0</version>
+</dependency>
+    <!-- FIN MAVEN POUR AZURE ACTIVE DIRECTORY -->
    <dependency>
     <groupId>javax.annotation</groupId>
     <artifactId>javax.annotation-api</artifactId>

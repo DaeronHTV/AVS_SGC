@@ -35,7 +35,23 @@ public class ConnectionBuilder {
     		return DriverManager.getConnection(config.url);
     	}
     	return DriverManager.getConnection(config.url, config.user, config.password);
-    }    
+    }
+    
+    public static String GUID(IDBConnection connection) {
+    	String guid = java.util.UUID.randomUUID().toString();
+    	switch(connection.getConnectionType()) {
+    		case SQLITE:
+    		case MSSQL:
+    			return guid;
+    		case ORACLE:
+    			String[] blocks = guid.split("-"); guid = "";
+    			for(String block: blocks) guid += block.toUpperCase();
+    			return guid;
+    		default:
+    			LogHelper.warning("Aucun type de BD trouve pour la connexion actuelle !");
+    			return null;
+    	}
+    }
     
     public static String TransformeRequete(IDBConnection connection, String requete) {
     	return null;

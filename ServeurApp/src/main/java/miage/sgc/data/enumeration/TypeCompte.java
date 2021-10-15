@@ -19,7 +19,7 @@ public enum TypeCompte implements IBaseEnum{
 		return code;
 	}
 	
-	public TypeCompte fromValue(String code) {
+	public static TypeCompte fromValue(String code) {
 		return GenericMethodHelper.<TypeCompte>fromValue(code, TypeCompte.values());
 	}
 	
