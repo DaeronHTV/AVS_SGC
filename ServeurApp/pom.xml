@@ -74,6 +74,17 @@
       </dependency>
     -->
     <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>2.14.0</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.6.1</version>
+</dependency>
+    <dependency>
     	<groupId>javax.json</groupId>
     	<artifactId>javax.json-api</artifactId>
     	<version>1.1.4</version>
@@ -214,21 +225,5 @@
         <artifactId>mail</artifactId>
       <version>1.4.3</version>
     </dependency>
-  	<!-- Pour lire les musiques OGG-->
-  	<dependency>
-    	<groupId>org.jcraft</groupId>
-    	<artifactId>jorbis</artifactId>
-    	<version>0.0.17</version>
-	</dependency>
-	<dependency>
-    	<groupId>org.openjfx</groupId>
-    	<artifactId>javafx-controls</artifactId>
-    	<version>17</version>
- 	</dependency>
-  	<!-- <dependency>
-    	<groupId>com.jcraft</groupId>
-    	<artifactId>jogg</artifactId>
-    	<version>0.0.7</version>
-	</dependency> PASSER EN DEPENDENCE LOCAL-->
   </dependencies>  
 </project>
