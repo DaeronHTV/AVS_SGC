@@ -3,11 +3,9 @@ package dedalus.sgc.api.mail;
 import java.util.ArrayList;
 import java.util.Properties;
 import javax.mail.internet.MimeMessage;
-import asmr.Routeur;
-import Avsoft.Helper.Logs.LogHelper;
-import Avsoft.Helper.FileHelper;
-import asmr.Integration.mail.mailUtilities.MailType;
-import asmr.Integration.mail.mailUtilities.MailSortant;
+import dedalus.core.helper.logs.LogHelper;
+import dedalus.sgc.api.mail.utils.MailSortant;
+import dedalus.sgc.api.mail.utils.MailType;
 /**
  * Service permettant 
  * @author Avanzino Aurélien
@@ -116,24 +114,6 @@ public class MailService implements Runnable {
     }
 
     /**
-     * Ajoute dans la liste des mails à envoyer, un mail de validation 
-     * du compte récemment créé
-     * @param adresse L'adresse de la personne dont le compte est vérifié
-     * @param name Le nom de la personne dont le compte est vérifié
-     */
-    public void addAccountVerified(String adresse, String name) {
-        Properties prop = new Properties();
-        prop.put("asmr.mail.type", MailType.Code.ACCOUNTVERIFIED);
-        prop.put("asmr.mail.sender", "");
-        prop.put("asmr.mail.sendernName", "VisioPad");
-        prop.put("asmr.mail.to", adresse);
-        prop.put("asmr.mail.subject", MailType.ACCOUNTVERIFIED.subject());
-        prop.put("asmr.mail.message", MailType.ACCOUNTVERIFIED.message());
-        LogHelper.info("Ajout d'un mail dans la liste : " + MailType.Code.ACCOUNTVERIFIED);
-        listeMail.add(prop);    
-    }
-
-    /**
      * Ajoute dans la liste des mails à envoyer un mail de contact
      * @param adresse L'adresse de la personne ayant rédiger le message
      * @param name Le nom de la personne ayant rédiger le message
@@ -155,29 +135,6 @@ public class MailService implements Runnable {
         prop.put("asmr.mail.subject", MailType.CONTACT.subject());
         prop.put("asmr.mail.message", message);
         LogHelper.info("Ajout d'un mail dans la liste : " + MailType.Code.CONTACT);
-        listeMail.add(prop);
-    }
-
-    /**
-     * Ajoute dans la liste des mails, un mail de rappel
-     * de rendez-vous à la personne indiquer dans les paramètres
-     * @param adresse l'adresse du receveur
-     * @param name le nom de receveur
-     * @param date La date de la visioconférence
-     * @param link Lien de la visioConférence
-     */
-    public void addRappelRDV(String adresse, String name, String date, String link) {
-        Properties prop = new Properties();
-        String part1 = MailType.RAPPELRDV.message();
-        String part2 = FileHelper.fileToString(Routeur.RendezVousPartial2_msg);
-        part1 += "<li>Date : " + date + "</li>";
-        part1 += "<li>Lien de la réunion : " + link + "</li>";
-        prop.put("asmr.mail.type", MailType.Code.RAPPELRDV);
-        prop.put("asmr.mail.sender", "visiopad@outlook.com");
-        prop.put("asmr.mail.to", adresse);
-        prop.put("asmr.mail.subject", MailType.RAPPELRDV.subject());
-        prop.put("asmr.mail.message", part1 + part2);
-        LogHelper.info("Ajout d'un mail dans la liste : " + MailType.Code.RAPPELRDV);
         listeMail.add(prop);
     }
 

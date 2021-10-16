@@ -27,9 +27,11 @@ IF EXIST "ServeurApp\" (
 ECHO [INFO] ---------------------------------------------------------
 ECHO [INFO] ---------------Copie des fichiers restants---------------
 ECHO [INFO] - %date% %time% : Copying all the other files
-ECHO [INFO] - %date% %time% : Copying config file
+ECHO [INFO] - %date% %time% : Copying config files
 XCOPY *.config .\target\ServeurApp /I /V /F /Y
 ECHO %date% %time% : [INFO] - Copying external libraries
 XCOPY lib\*.jar .\target\ServeurApp\lib /I /V /F /Y
+ECHO [INFO] - %date% %time% : Copying data files
+XCOPY data\ .\target\ServeurApp\data /V /F /Y /E /I
 ECHO [INFO] ---------------------------------------------------------
 PAUSE

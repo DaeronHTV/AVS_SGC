@@ -1,7 +1,7 @@
 package dedalus.sgc.data.enumeration;
 
-import Avsoft.Helper.GenericMethodHelper;
-import Avsoft.Patrons.Enumeration.IBaseEnum;
+import dedalus.core.helper.GenericMethodHelper;
+import dedalus.core.patrons.enumeration.IBaseEnum;
 
 public enum TypeCompte implements IBaseEnum{
 	MEMBRE("MEMBRE"),

@@ -23,4 +23,13 @@ public class ApiConf {
 	
 	@XmlTransient
 	public Server getServer() { return this.server; }
+	
+	@XmlTransient
+	public int getMaxThreads() { return this.server.getMaxThreads(); }
+	
+	@XmlTransient
+	public int getMinThreads() { return this.server.getMinThreads(); }
+	
+	@XmlTransient
+	public int getIdleTimeOut() { return this.server.getIdleTimeOut(); }
 }

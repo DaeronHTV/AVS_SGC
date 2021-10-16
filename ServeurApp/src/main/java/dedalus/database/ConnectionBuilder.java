@@ -3,9 +3,9 @@ package dedalus.database;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.xml.bind.JAXBException;
-import Avsoft.Helper.Logs.LogHelper;
-import Avsoft.Manager.Config.ConfigManager;
-import Avsoft.Bdd.Config.ConnectionString;
+import dedalus.core.bdd.config.ConnectionString;
+import dedalus.core.helper.logs.LogHelper;
+import dedalus.core.manager.config.ConfigManager;
 import java.sql.Connection;
 
 public class ConnectionBuilder {

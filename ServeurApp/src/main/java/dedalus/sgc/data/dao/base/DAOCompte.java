@@ -3,7 +3,7 @@ package dedalus.sgc.data.dao.base;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Avsoft.Helper.StringHelper;
+import dedalus.core.helper.StringHelper;
 import dedalus.core.GeneratePassword;
 import dedalus.database.ConnectionBuilder;
 import dedalus.database.IDBConnection;

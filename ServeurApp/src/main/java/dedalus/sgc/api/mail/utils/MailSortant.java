@@ -1,14 +1,12 @@
 package dedalus.sgc.api.mail.utils;
 
 import java.util.Properties;
-
 import javax.mail.MessagingException;
 import javax.mail.Transport;
 import javax.mail.Message.RecipientType;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
-import Avsoft.Helper.Logs.LogHelper;
+import dedalus.core.helper.logs.LogHelper;
 
 public final class MailSortant extends MailCommun {
     protected Transport transport;

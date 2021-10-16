@@ -1,7 +1,7 @@
 package dedalus.database;
 
-import Avsoft.Helper.GenericMethodHelper;
-import Avsoft.Patrons.Enumeration.IBaseEnum;
+import dedalus.core.helper.GenericMethodHelper;
+import dedalus.core.patrons.enumeration.IBaseEnum;
 
 public enum DBTypeEnum implements IBaseEnum{
 	ORACLE("oracle", "oracle.jdbc.driver.OracleDriver", ":"),

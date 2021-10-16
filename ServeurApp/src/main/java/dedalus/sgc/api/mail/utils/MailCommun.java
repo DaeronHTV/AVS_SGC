@@ -5,9 +5,8 @@ import java.util.Properties;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-import asmr.Routeur;
-import Avsoft.Helper.Xml.XMLHelper;
-import Avsoft.Helper.Logs.LogHelper;
+import dedalus.core.helper.xml.XMLHelper;
+import dedalus.core.helper.logs.LogHelper;
 
 /**
  * Classe commune à l'ensemble des transports mails
@@ -23,7 +22,7 @@ public abstract class MailCommun {
      * Constructor par defaut du transport
      * @see MailCommun#MailCommun()
      */
-    public MailCommun() {this(Routeur.MailConfig, Routeur.AccountConnexion);}
+    public MailCommun() {this("", "");}
 
     /**
      * Constructor prenant en paramètre des données de connexion personnalisé

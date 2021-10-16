@@ -3,8 +3,8 @@ package dedalus.sgc.data.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Avsoft.Helper.StringHelper;
-import Avsoft.Helper.Logs.LogHelper;
+import dedalus.core.helper.StringHelper;
+import dedalus.core.helper.logs.LogHelper;
 import dedalus.database.IDBConnection;
 import dedalus.sgc.data.object.BaseObject;
 

@@ -1,16 +1,19 @@
 package dedalus.core.config;
 
 import javax.xml.bind.JAXBException;
-
-import Avsoft.Helper.GenericMethodHelper;
+import dedalus.core.ConstHelper;
+import dedalus.core.config.appconfig.AppConfig;
 import dedalus.core.config.appsettings.AppSettings;
+import dedalus.core.helper.GenericMethodHelper;
 
 public class ServerConfig {
 	private static volatile ServerConfig instance = null;
 	public AppSettings appSettings;
+	public AppConfig appConfig;
 	
 	private ServerConfig() throws JAXBException {
 		setAppSettings();
+		setAppConfig();
 	}
 	
 	public static ServerConfig getInstance() throws JAXBException {
@@ -25,10 +28,10 @@ public class ServerConfig {
 	}
 	
 	private void setAppSettings() throws JAXBException {
-		appSettings = GenericMethodHelper.<AppSettings>getJaxbObjectFromFile("AppSettings.config", AppSettings.class);
+		appSettings = GenericMethodHelper.<AppSettings>getJaxbObjectFromFile(ConstHelper.appSettingsPath, AppSettings.class);
 	}
 	
-	private void setAppConfig() {
-		
+	private void setAppConfig() throws JAXBException {
+		appConfig = GenericMethodHelper.<AppConfig>getJaxbObjectFromFile(ConstHelper.appConfigPath, AppConfig.class);
 	}
 }

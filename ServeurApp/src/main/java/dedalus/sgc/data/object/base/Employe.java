@@ -3,8 +3,8 @@ package dedalus.sgc.data.object.base;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import Avsoft.Helper.StringHelper;
 import dedalus.sgc.data.object.BaseObject;
+import dedalus.core.helper.StringHelper;
 
 @XmlRootElement(name="Employe")
 public class Employe extends BaseObject{

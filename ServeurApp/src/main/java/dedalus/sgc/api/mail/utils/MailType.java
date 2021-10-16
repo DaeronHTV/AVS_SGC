@@ -1,7 +1,7 @@
 package dedalus.sgc.api.mail.utils;
 
-import asmr.Routeur;
-import Avsoft.Helper.FileHelper;
+import dedalus.core.ConstHelper;
+import dedalus.core.helper.FileHelper;
 
 /**
  * Il s'agit d'une enumeration gardant en mémoire l'ensemble des données
@@ -15,10 +15,9 @@ public enum MailType {
      * Contient l'ensemble des informations relatifs au mail automatique envoyé 
      * lorsqu'un nouveau compte est créé par un utilisateur
      */
-    ACCOUNTCREATE(FileHelper.fileToString(Routeur.AccountCreate_msg), "VisioPad - Création de compte réussi !"),
-    ACCOUNTVERIFIED(FileHelper.fileToString(Routeur.AccountVerified_msg), "VisioPad - Compte vérifié !"),
-    RAPPELRDV(FileHelper.fileToString(Routeur.RendezVousPartial1_msg), "VisioPad - Rappel rendez-vous !"),
-    CONTACT(FileHelper.fileToString(Routeur.ContactPartial_msg), "Ticket Support");
+    ACCOUNTCREATE(FileHelper.fileToString(ConstHelper.AccCreateMail), "SCG - Creation de compte reussi !"),
+    CHANGEPWD(FileHelper.fileToString(ConstHelper.PwdChangeMail), "SGC - Demande de modification de mot de passe"),
+    CONTACT(FileHelper.fileToString(ConstHelper.ContactMail), "Ticket Support");
 
     public interface Code{
         String ACCOUNTCREATE = "AccountCreate";
@@ -44,9 +43,7 @@ public enum MailType {
      * @return The text and format of the message
      * @since 29/01/2021
      */
-    public String message(){
-        return this.message;
-    }
+    public String message(){ return this.message; }
 
     /**
      * Obtient le sujet du message sous la forme d'un string
