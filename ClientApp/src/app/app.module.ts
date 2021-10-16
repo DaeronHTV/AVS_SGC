@@ -15,12 +15,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AccueilComponent } from './component/accueil/accueil.component';
-//import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { RendezVousComponent } from './component/rendezvous/rendezvous.component';
 import { MesRendezVousComponent } from './component/mesrdv/mesrdv.component';
-import { AideComponent } from './component/aide/aide.component';
 import { ModifProfilComponent } from './component/modifProfil/modifProfil.component';
 import { PlanningPersonnelComponent } from './component/planningPersonnel/planningPersonnel.component';
 import { ChoisirPortailComponent } from './component/choisir-portail/choisir-portail.component';
@@ -28,8 +26,6 @@ import { PortailPersonnelSignInComponent } from './component/portail-personnel-s
 import { PortailFamilleSignInComponent } from './component/portail-famille-sign-in/portail-famille-sign-in.component';
 import { PortailFamilleLoginComponent } from './component/portail-famille-login/portail-famille-login.component';
 import { PortailPersonnelLoginComponent } from './component/portail-personnel-login/portail-personnel-login.component';
-import { ResidentPersonnelComponent } from './component/residentPersonnel/residentPersonnel.component';
-import { ListContactsComponent } from './component/list-contacts/list-contacts.component';
 
 /*import matérial angular*/
 import { MatCardModule } from '@angular/material/card';
@@ -61,7 +57,6 @@ registerLocaleData(localeFr, 'fr');
     ContactComponent,
     RendezVousComponent,
     MesRendezVousComponent,
-    AideComponent,
     ModifProfilComponent,
     PlanningPersonnelComponent,
     ChoisirPortailComponent,
@@ -69,8 +64,6 @@ registerLocaleData(localeFr, 'fr');
     PortailFamilleSignInComponent,
     PortailFamilleLoginComponent,
     PortailPersonnelLoginComponent,
-    ResidentPersonnelComponent,
-    ListContactsComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,6 @@ import { DonneespersoComponent } from './component/reglement/donneesperso/donnee
 import { ContactComponent } from './component/contact/contact.component';
 import { RendezVousComponent } from './component/rendezvous/rendezvous.component';
 import { MesRendezVousComponent } from './component/mesrdv/mesrdv.component';
-import { AideComponent } from './component/aide/aide.component';
 import { ModifProfilComponent } from './component/modifProfil/modifProfil.component';
 import { PlanningPersonnelComponent } from './component/planningPersonnel/planningPersonnel.component';
 import { AppRoutingEnum } from './app-routing.enum';
@@ -14,8 +13,6 @@ import { PortailPersonnelSignInComponent } from './component/portail-personnel-s
 import { PortailPersonnelLoginComponent } from './component/portail-personnel-login/portail-personnel-login.component';
 import { PortailFamilleSignInComponent } from './component/portail-famille-sign-in/portail-famille-sign-in.component';
 import { PortailFamilleLoginComponent } from './component/portail-famille-login/portail-famille-login.component';
-import { ResidentPersonnelComponent } from './component/residentPersonnel/residentPersonnel.component';
-import { ListContactsComponent } from './component/list-contacts/list-contacts.component';
 import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
 
 const routes: Routes = [
@@ -26,15 +23,12 @@ const routes: Routes = [
   {path: AppRoutingEnum.PersonalData, component: DonneespersoComponent},
   {path: AppRoutingEnum.Contact, component:ContactComponent},
   {path: AppRoutingEnum.Rendezvous, component:RendezVousComponent},
-  {path: AppRoutingEnum.Help, component:AideComponent},
   {path: AppRoutingEnum.PlanningPersonnel, component:PlanningPersonnelComponent},
   {path: AppRoutingEnum.ChoosePortal, component:ChoisirPortailComponent},
   {path: AppRoutingEnum.PortalPersonnelSignIn, component:PortailPersonnelSignInComponent},
   {path: AppRoutingEnum.PortalPersonnelLogin, component:PortailPersonnelLoginComponent},
   {path: AppRoutingEnum.PortalFamilleSignIn, component:PortailFamilleSignInComponent},
   {path: AppRoutingEnum.PortalFamilleLogin, component:PortailFamilleLoginComponent},
-  {path: AppRoutingEnum.ResidentPersonnel, component:ResidentPersonnelComponent},
-  {path: AppRoutingEnum.ListContacts, component:ListContactsComponent},
   {path: AppRoutingEnum.MentionsLegales, component: MentionslegalesComponent},
   {path: AppRoutingEnum.DonneesPerso, component: DonneespersoComponent}
 ];

@@ -10,26 +10,18 @@
           <mat-icon>home</mat-icon><b>Accueil</b>
         </a></li>
       <!--Si c'est un contact de connecté-->
-      <ng-container *ngIf="(authService.user$ | async) && !authService.personnel && contact?.verified">
+      <ng-container>
         <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.Rendezvous]">
             <mat-icon>book_online</mat-icon><b>Prendre rendez-vous</b>
           </a></li>
         <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.MyRendezvous]">
             <mat-icon>event</mat-icon><b>Mes rendez-vous</b>
           </a></li>
-      </ng-container>
-      <!--Si c'est un personnel de connecté-->
-      <ng-container *ngIf="(authService.user$ | async) && authService.personnel">
-        <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.PlanningPersonnel]">
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.PlanningPersonnel]">
             <mat-icon>book_online</mat-icon><b>Mon planning de rendez-vous</b>
           </a></li>
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.ResidentPersonnel]">
-            <mat-icon>list</mat-icon><b>Liste de mes résidents</b>
-          </a></li>
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.ListContacts]">
-            <mat-icon>create</mat-icon><b>Liste contact à valider</b>
-          </a></li>
       </ng-container>
+        
       <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.Contact]">
           <mat-icon>call</mat-icon><b>Nous Contacter</b>
         </a></li>

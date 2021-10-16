@@ -6,20 +6,8 @@
 
 <footer>
   <div class="footer">
-    <div>
-      <a class="btn"><i><b>&copy; 2020 - 2021 : ASMR</b></i> 
-      <p><i><b>Groupe 5:</b></i></p>
-      <p><i><b>AVANZINO - GOURDON - OUBARI - VARINIER</b></i></p>
-    </a>
-    </div>
-    <div>
-      <ul>
-        <li><a class="btn" [routerLink]="['/', AppRoutingEnum.MentionsLegales]"><i><b>Mentions Légales</b></i></a></li>
-        <li><a class="btn"[routerLink]="['/', AppRoutingEnum.DonneesPerso]"><i><b>Données Personnelles</b></i></a></li>
-      </ul>
-    </div>
-    <div>
-      <a class="btn" href="" [routerLink]="['aide']"> <mat-icon>help_outline</mat-icon><i><b> Besoin d'aide ?</b></i></a>
-    </div>
+    <div><a class="btn"><b>&copy; 2020 - 2021 : ASMR</b></a></div>
+    <div><a class="btn" [routerLink]="['/', AppRoutingEnum.MentionsLegales]"><b>Mentions Légales</b></a></div>
+    <div><a class="btn"[routerLink]="['/', AppRoutingEnum.DonneesPerso]"><b>Données Personnelles</b></a></div>
   </div>
 </footer>
