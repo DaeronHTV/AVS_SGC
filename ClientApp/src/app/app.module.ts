@@ -5,7 +5,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -13,20 +12,10 @@ import { MenuComponent } from './component/menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AccueilComponent } from './component/accueil/accueil.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { ContactComponent } from './component/contact/contact.component';
-import { RendezVousComponent } from './component/rendezvous/rendezvous.component';
-import { MesRendezVousComponent } from './component/mesrdv/mesrdv.component';
 import { ModifProfilComponent } from './component/modifProfil/modifProfil.component';
-import { PlanningPersonnelComponent } from './component/planningPersonnel/planningPersonnel.component';
-import { ChoisirPortailComponent } from './component/choisir-portail/choisir-portail.component';
-import { PortailPersonnelSignInComponent } from './component/portail-personnel-sign-in/portail-personnel-sign-in.component';
-import { PortailFamilleSignInComponent } from './component/portail-famille-sign-in/portail-famille-sign-in.component';
-import { PortailFamilleLoginComponent } from './component/portail-famille-login/portail-famille-login.component';
-import { PortailPersonnelLoginComponent } from './component/portail-personnel-login/portail-personnel-login.component';
-
 /*import matérial angular*/
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -52,18 +41,9 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     MenuComponent,
     AccueilComponent,
-    //MentionslegalesComponent,
     DonneespersoComponent,
     ContactComponent,
-    RendezVousComponent,
-    MesRendezVousComponent,
     ModifProfilComponent,
-    PlanningPersonnelComponent,
-    ChoisirPortailComponent,
-    PortailPersonnelSignInComponent,
-    PortailFamilleSignInComponent,
-    PortailFamilleLoginComponent,
-    PortailPersonnelLoginComponent,
   ],
   imports: [
     BrowserModule,
