@@ -1,9 +1,6 @@
 package Miage.sgc.data.object.base;
 
 import java.sql.Date;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import Miage.sgc.data.enumeration.TypeCompte;
 import Miage.sgc.data.object.BaseObject;
 
@@ -17,12 +14,11 @@ import Miage.sgc.data.object.BaseObject;
  * @version 1.0
  * @author Avanzino.A
  */
-@XmlRootElement(name="Compte")
 public class Compte extends BaseObject{
-	@XmlTransient private String employeId;
-	@XmlElement(name="Mail") private String mail;
-	@XmlElement(name="Password") private String password;
-	@XmlElement(name="TypeCompte") private TypeCompte typeCompte;
+	private String employeId;
+	private String mail;
+	private String password;
+	private TypeCompte typeCompte;
 	
 	@SuppressWarnings("unused") private Compte() { /*Pas modifier - Pour generation XML*/ }
 	
@@ -58,7 +54,6 @@ public class Compte extends BaseObject{
 	/**
 	 * @return L'identifiant de l'employe associe au compte
 	 */
-	@XmlTransient
 	public String getEmployeId() { return employeId; }
 	
 	/**
@@ -70,7 +65,6 @@ public class Compte extends BaseObject{
 	/**
 	 * @return Le mot de passe du compte
 	 */
-	@XmlTransient
 	public String getPassword() { return password; }
 
 	/**
@@ -82,7 +76,6 @@ public class Compte extends BaseObject{
 	/**
 	 * @return Le type du compte
 	 */
-	@XmlTransient
 	public TypeCompte getTypeCompte() { return typeCompte; }
 	
 	/**

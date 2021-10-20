@@ -2,6 +2,7 @@ package Miage.core.helper;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -20,7 +21,7 @@ public class TimeHelper {
 	 */
 	public static String Now() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		return dateFormat.format(currentDeviceDate);
+		return dateFormat.format(Date.from(Instant.now()));
 	}
 	
 	public static String Now(String format) {
