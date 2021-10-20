@@ -1,6 +1,5 @@
 package Miage.sgc.data.object.base;
 
-import java.sql.Date;
 import Miage.sgc.data.enumeration.TypeCompte;
 import Miage.sgc.data.object.BaseObject;
 
@@ -43,8 +42,8 @@ public class Compte extends BaseObject{
 	 * @param dateInsertion Date a laquelle ce compte a ete insere en base de donnees
 	 * @param dateMaj Date de la derniere mise a jour de l'objet en BD
 	 */
-	protected Compte(String id, String employeId, String mail, String password, TypeCompte typeCompte, Date dateInsertion, Date dateMaj) {
-		super(id, dateInsertion, dateMaj);
+	protected Compte(String id, String employeId, String mail, String password, TypeCompte typeCompte) {
+		super(id, null, null);
 		this.employeId = employeId;
 		this.password = password;
 		this.typeCompte = typeCompte;

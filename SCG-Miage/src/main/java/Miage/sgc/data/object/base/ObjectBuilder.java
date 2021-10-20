@@ -1,6 +1,5 @@
 package Miage.sgc.data.object.base;
 
-import java.sql.Date;
 import Miage.sgc.data.enumeration.TypeCompte;
 
 public class ObjectBuilder {
@@ -26,8 +25,8 @@ public class ObjectBuilder {
 		return new Compte(employeId, mail, typeCompte);
 	}
 	
-	public static Compte createAccount(String id, String employeId, String mail, String password, TypeCompte typeCompte, Date dateInsertion, Date dateMaj) {
-		return new Compte(id, employeId, mail, password, typeCompte, dateInsertion, dateMaj);
+	public static Compte createAccount(String id, String employeId, String mail, String password, TypeCompte typeCompte) {
+		return new Compte(id, employeId, mail, password, typeCompte);
 	}
 	
 	public static Competence createCompetence(String code) { return new Competence(code); }

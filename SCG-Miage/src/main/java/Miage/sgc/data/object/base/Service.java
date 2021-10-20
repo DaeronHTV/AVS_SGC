@@ -1,14 +1,10 @@
 package Miage.sgc.data.object.base;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import Miage.sgc.data.object.BaseObject;
 
-@XmlRootElement(name="Services")
 public class Service extends BaseObject{
-	@XmlElement(name="Code") private String code;
-	@XmlElement(name="Libelle") private String libelle;
+	private String code;
+	private String libelle;
 	
 	public static Service createService(String code) { return new Service(code); }
 	
@@ -23,12 +19,10 @@ public class Service extends BaseObject{
 		this.libelle = libelle;
 	}
 
-	@XmlTransient
 	public String getCode() { return code; }
 
 	public void setCode(String code) { this.code = code; }
 
-	@XmlTransient
 	public String getLibelle() { return libelle; }
 
 	public void setLibelle(String libelle) { this.libelle = libelle; }

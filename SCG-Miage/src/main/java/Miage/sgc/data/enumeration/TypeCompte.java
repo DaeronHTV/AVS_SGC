@@ -22,4 +22,6 @@ public enum TypeCompte implements IBaseEnum{
 		return GenericMethodHelper.<TypeCompte>fromValue(code, TypeCompte.values());
 	}
 	
+	@Override
+	public String toString() { return this.code; }
 }

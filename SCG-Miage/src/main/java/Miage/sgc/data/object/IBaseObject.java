@@ -9,6 +9,8 @@ public interface IBaseObject {
 	
 	Date getDateInsertion();
 	
+	void setDateInsertion(Date dateInsertion);
+	
 	Date getDateMaj();
 	
 	void setDateMaj(Date dateMaj);

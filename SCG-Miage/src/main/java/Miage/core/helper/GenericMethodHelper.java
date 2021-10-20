@@ -11,7 +11,7 @@ public final class GenericMethodHelper {
 	/**
 	 * @implNote L'appel : EnumTools.<String>fromValue(strings, {mon tableau...})
 	 */
-	public static <T> T fromValue(String v, T[] valuesToCheck) {
+	public static <T extends Enum<?>> T fromValue(String v, T[] valuesToCheck) {
         for (T c: valuesToCheck) {
             if (c.toString().equals(v)) return c;
         }

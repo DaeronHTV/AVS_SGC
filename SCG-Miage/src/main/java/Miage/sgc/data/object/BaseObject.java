@@ -27,4 +27,7 @@ public class BaseObject implements IBaseObject{
 	public Date getDateMaj() { return this.dateMaj; }
 
 	public void setDateMaj(Date dateMaj) { this.dateMaj = dateMaj; }
+
+	@Override
+	public void setDateInsertion(Date dateInsertion) { this.dateInsertion = dateInsertion; }
 }
