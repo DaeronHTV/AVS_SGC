@@ -1,6 +1,7 @@
 package Miage.sgc.data.object;
 
 import java.sql.Date;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class BaseObject implements IBaseObject{
 	private String id;
@@ -22,8 +23,10 @@ public class BaseObject implements IBaseObject{
 
 	public void setId(String id) { this.id = id; }
 
+	@JsonIgnore
 	public Date getDateInsertion() { return this.dateInsertion; }
 
+	@JsonIgnore
 	public Date getDateMaj() { return this.dateMaj; }
 
 	public void setDateMaj(Date dateMaj) { this.dateMaj = dateMaj; }

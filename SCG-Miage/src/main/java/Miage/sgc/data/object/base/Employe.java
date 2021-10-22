@@ -1,6 +1,7 @@
 package Miage.sgc.data.object.base;
 
 import Miage.sgc.data.object.BaseObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import Miage.core.helper.StringHelper;
 
 public class Employe extends BaseObject{
@@ -15,12 +16,15 @@ public class Employe extends BaseObject{
 	@SuppressWarnings("unused") private Employe() {}
 	
 	protected Employe(String code, String prenom, String mail) {
-		this.code = code;
-		this.prenom = prenom;
-		this.mail = mail;
+		this(code, prenom, null, null, mail);
 	}
 	
 	protected Employe(String code, String prenom, String nom, String telephone, String mail) {
+		this(null, code, prenom, nom, telephone, mail);
+	}
+	
+	protected Employe(String id, String code, String prenom, String nom, String telephone, String mail) {
+		super(id, null, null);
 		this.code = code;
 		this.prenom = prenom;
 		this.nom = nom;
@@ -55,8 +59,10 @@ public class Employe extends BaseObject{
 	public String getMail() { return mail; }
 
 	public void setMail(String mail) { this.mail = mail; }
-
+	
+	@JsonIgnore
 	public String getPrenomASCII() { return prenomASCII; }
 
+	@JsonIgnore
 	public String getNomASCII() { return nomASCII; }
 }

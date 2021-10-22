@@ -1,13 +1,11 @@
 package Miage.sgc;
-import javax.xml.bind.JAXBException;
 
+import javax.xml.bind.JAXBException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import Miage.core.helper.logs.LogHelper;
 import Miage.core.manager.ConfigManager;
 import Miage.sgc.api.ServiceManager;
-import Miage.sgc.api.services.MailService;
 
 @SpringBootApplication
 public class SGCServer {

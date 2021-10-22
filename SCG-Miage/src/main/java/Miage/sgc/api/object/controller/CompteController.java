@@ -1,14 +1,11 @@
 package Miage.sgc.api.object.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import Miage.sgc.api.object.request.CompteRequest;
 import Miage.sgc.data.dao.DAOBuilder;
 import Miage.sgc.data.dao.base.DAOCompte;
@@ -40,7 +37,7 @@ public class CompteController {
 	}
 	
 	@ApiOperation(value="Retourne le compte avec associe a l'id")
-	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/compte/{id}")
+	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/compte?Id={id}")
 	public Compte getAccount(@PathVariable String id) {
 		DAOCompte dao = DAOBuilder.CompteDAO();
 		Compte result = dao.read(id);
@@ -56,12 +53,12 @@ public class CompteController {
 	
 	@ApiOperation(value="Retourne une liste de compte en fonction de parametre")
 	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/compte/query")
-	public ArrayList<Compte> getCompteByQuery(@RequestBody CompteRequest query){
+	public List<Compte> getCompteByQuery(@RequestBody CompteRequest query){
 		return null; // TODO
 	}
 	
 	@ApiOperation(value="Supprimer un compte de la base")
-	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/compte/delete/{id}")
+	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/compte/delete?Id={id}")
 	public boolean deleteCompteById(@PathVariable String id) {
 		DAOCompte dao = DAOBuilder.CompteDAO();
 		return dao.delete(id);
