@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResidentInterface } from '../interface/personne';
 
 @Injectable({
   providedIn: 'root'

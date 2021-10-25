@@ -34,6 +34,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ConnectComponent } from './component/connect/connect.component';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -44,6 +45,7 @@ registerLocaleData(localeFr, 'fr');
     DonneespersoComponent,
     ContactComponent,
     ModifProfilComponent,
+    ConnectComponent,
   ],
   imports: [
     BrowserModule,

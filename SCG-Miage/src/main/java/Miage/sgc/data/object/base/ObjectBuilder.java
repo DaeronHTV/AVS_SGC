@@ -15,6 +15,14 @@ public class ObjectBuilder {
 	public static Employe createEmploye(String id, String code, String prenom, String nom, String telephone, String mail) {
 		return new Employe(id, code, prenom, nom, telephone, mail);
 	}
+	
+	public static Emploi createEmploi(String code, String libelle, String description) {
+		return new Emploi(code, libelle, description);
+	}
+
+	public static Emploi createEmploi(String id, String code, String libelle, String description) {
+		return new Emploi(id, code, libelle, description);
+	}
 	/***********************TERMINE****************************/
 	
 	@Deprecated
@@ -27,14 +35,6 @@ public class ObjectBuilder {
 	
 	public static Employe createEmploye(String code, String prenom, String nom, String telephone, String mail) {
 		return new Employe(code, prenom, nom, telephone, mail);
-	}
-	
-	public static Emploi createEmploi(String code) { return new Emploi(code); }
-	
-	public static Emploi createEmploi(String code, String libelle) { return new Emploi(code, libelle); }
-	
-	public static Emploi createEmploi(String code, String libelle, String description) {
-		return new Emploi(code, libelle, description);
 	}
 	
 	@Deprecated

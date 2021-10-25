@@ -1,31 +1,21 @@
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="bg1 navbar navbar-expand-md navbar-light">
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <img class="logoAccueil" src="../assets/pictures/logo.png" alt="" />
+
+  <div class="bg1 collapse navbar-collapse" id="navbarSupportedContent">
+    <img class="logoAccueil" src="../assets/pictures/Logo (2).png" alt="" />
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><a class="nav-link" [routerLink]="[AppRoutingEnum.Home]">
-          <mat-icon>home</mat-icon><b>Accueil</b>
-        </a></li>
-      <!--Si c'est un contact de connecté-->
-      <ng-container>
-        <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.Rendezvous]">
-            <mat-icon>book_online</mat-icon><b>Prendre rendez-vous</b>
-          </a></li>
-        <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.MyRendezvous]">
-            <mat-icon>event</mat-icon><b>Mes rendez-vous</b>
-          </a></li>
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.PlanningPersonnel]">
-            <mat-icon>book_online</mat-icon><b>Mon planning de rendez-vous</b>
-          </a></li>
-      </ng-container>
-        
+        <b>Accueil</b>
+      </a></li>
       <li class="nav-item"><a class="nav-link" [routerLink]="['/', AppRoutingEnum.Contact]">
-          <mat-icon>call</mat-icon><b>Nous Contacter</b>
+          <b>Contact</b>
         </a></li>
     </ul>
+    
     <form class="form-inline">
       <a class="circle-link" title="Connexion" rel="noopener">
         <img class="logoConnexion" src="../assets/pictures/connexion.png" />

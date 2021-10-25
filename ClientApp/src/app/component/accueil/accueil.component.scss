@@ -7,21 +7,6 @@
     font-size:xx-large;
 }
 
-.prenom{
-    font: bold large serif;
-    font-size:x-large;
-}
-
-.ville{
-    font: italic large serif;
-    font-size:medium;
-}
-
-.commentaire{
-    font: large serif;
-    font-size:large;
-}
-
 .example-card {
     margin: 5px;
     height: 170px;
@@ -42,12 +27,6 @@
     background-size: cover;
     background-position: 20% 75%;
   }
-
-  .img{
-      text-align: center;
-  }
-
-  .imgcovid{
-    width: 90%;
-    height: auto;
+  mat-grid-tile {
+    background: lightblue;
   }

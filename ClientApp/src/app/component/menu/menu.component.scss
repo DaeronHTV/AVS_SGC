@@ -5,16 +5,11 @@
   .circle-link:hover { transform: translateY(-0.25rem); box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
   @media screen and (max-width: 808px) and (min-width: 768px){
-    a[class^="nav-link"]{
-      font-size:small;
-    }
+    a[class^="nav-link"]{font-size:small;}
   }
   
 .nav-item{width: auto;font-size: large;}
-.collapse, .navbar{background: linear-gradient(rgb(255, 133, 33), rgb(255, 255, 255));min-height: 119px;}
+.collapse, .navbar{min-height: 119px;}
 
-.logoAccueil{
-  height: 115px;
-  width: 140px;
-} 
+.logoAccueil{height: 115px;width: 140px;} 
 .logoConnexion{width:60px;height:60px;}

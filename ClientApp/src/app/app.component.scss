@@ -1,8 +1,6 @@
-  footer{ background:linear-gradient(rgb(255, 255, 255),rgb(255, 133, 33));position: absolute;left: 0;right: 0;min-height: 150px; margin-top: 0px;
+  footer{position: absolute;left: 0;right: 0;min-height: 150px; margin-top: 0px;
     align-items: center;}
-/*  footer a{color: white;align-items: center;}
-  footer a:hover{color: black;}
-*/
+
   .footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -28,8 +26,4 @@
     min-height: 370px;
     flex-direction: column;
     background-color: white;
-  }
-  
-  .btn{
-    color: rgba(0, 0, 0, 0.795);
   }

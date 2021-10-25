@@ -16,4 +16,6 @@ public class DAOBuilder {
 	public static DAOCompte CompteDAO() { return new DAOCompte(connection); }
 	
 	public static DAOEmploye DAOEmploye() { return new DAOEmploye(connection); }
+	
+	public static DAOEmploi DAOEmploi() { return new DAOEmploi(connection); }
 }
