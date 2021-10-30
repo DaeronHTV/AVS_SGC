@@ -44,11 +44,36 @@ export class ApicontrollerApi {
     }
 
     /**
+     * Retourne le système actuel java utilise pour le serveur
+     * 
+     */
+    public getJavaVersionUsingGET (extraHttpRequestParams?: any ) : Observable<string> {
+        const path = this.basePath + '/api/infos/javaVersion';
+
+        let queryParameters = new URLSearchParams();
+        let headerParams = this.defaultHeaders;
+        let requestOptions: RequestOptionsArgs = {
+            method: 'GET',
+            headers: headerParams,
+            search: queryParameters
+        };
+
+        return this.http.request(path, requestOptions)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json();
+                }
+            });
+    }
+
+    /**
      * Retourne la version actuelle de l&#39;api
      * 
      */
     public getVersionUsingGET (extraHttpRequestParams?: any ) : Observable<string> {
-        const path = this.basePath + '/api/sgc/infos/version';
+        const path = this.basePath + '/api/infos/version';
 
         let queryParameters = new URLSearchParams();
         let headerParams = this.defaultHeaders;

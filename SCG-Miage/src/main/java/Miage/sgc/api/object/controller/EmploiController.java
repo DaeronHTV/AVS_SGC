@@ -33,7 +33,7 @@ public class EmploiController {
 	}
 	
 	@ApiOperation(value="")
-	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/emploi?Id={id}")
+	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/emploi/{id}")
 	public Emploi getEmploi(@PathVariable String id) {
 		DAOEmploi dao = DAOBuilder.DAOEmploi();
 		return dao.read(id);
@@ -54,7 +54,7 @@ public class EmploiController {
 	}
 	
 	@ApiOperation(value="")
-	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/emploi/delete?Id={id}")
+	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/emploi/delete/{id}")
 	public boolean deleteEmploi(@PathVariable String id) {
 		DAOEmploi dao = DAOBuilder.DAOEmploi();
 		return dao.delete(id); //TODO

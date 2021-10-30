@@ -37,7 +37,7 @@ public class CompteController {
 	}
 	
 	@ApiOperation(value="Retourne le compte avec associe a l'id")
-	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/compte?Id={id}")
+	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/compte/{id}")
 	public Compte getAccount(@PathVariable String id) {
 		DAOCompte dao = DAOBuilder.CompteDAO();
 		Compte result = dao.read(id);
@@ -58,7 +58,7 @@ public class CompteController {
 	}
 	
 	@ApiOperation(value="Supprimer un compte de la base")
-	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/compte/delete?Id={id}")
+	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/compte/delete/{id}")
 	public boolean deleteCompteById(@PathVariable String id) {
 		DAOCompte dao = DAOBuilder.CompteDAO();
 		return dao.delete(id);

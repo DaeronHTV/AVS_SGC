@@ -30,7 +30,7 @@ public class ConnaissanceController {
 	}
 	
 	@ApiOperation(value="Retourne la connaissance associee a l'id")
-	@RequestMapping(method=RequestMethod.GET, value="api/sgc/knowledge?Id={id}")
+	@RequestMapping(method=RequestMethod.GET, value="api/sgc/knowledge/{id}")
 	public Connaissance getConnaissance(@PathVariable String id) {
 		return null; // TODO
 	}
@@ -48,7 +48,7 @@ public class ConnaissanceController {
 	}
 	
 	@ApiOperation(value="Supprime connaissance presente en base de donnees")
-	@RequestMapping(method=RequestMethod.DELETE, value="api/sgc/knowledge/delete?Id={Id}")
+	@RequestMapping(method=RequestMethod.DELETE, value="api/sgc/knowledge/delete/{id}")
 	public boolean deleteConnaissanceById(@PathVariable String id) {
 		return false; //TODO
 	}

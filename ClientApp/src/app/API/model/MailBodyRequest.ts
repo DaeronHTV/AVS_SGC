@@ -34,9 +34,9 @@ export interface MailBodyRequest {
 
     receiversMail?: Array<string>;
 
-    receiversStringMail?: string;
-
     senderMail?: string;
 
     senderName?: string;
+
+    subject?: string;
 }

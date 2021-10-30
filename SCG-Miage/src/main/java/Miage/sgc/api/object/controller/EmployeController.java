@@ -32,7 +32,7 @@ public class EmployeController {
 	}
 	
 	@ApiOperation(value="Retourne l'employe associe a l'id donne")
-	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/employe?Id={id}")
+	@RequestMapping(method=RequestMethod.GET, value="/api/sgc/employe/{id}")
 	public Employe getEmploye(@PathVariable String id) {
 		DAOEmploye dao = DAOBuilder.DAOEmploye();
 		return dao.read(id);
@@ -52,7 +52,7 @@ public class EmployeController {
 	}
 	
 	@ApiOperation(value="")
-	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/employe/delete?Id={id}")
+	@RequestMapping(method=RequestMethod.DELETE, value="/api/sgc/employe/delete/{id}")
 	public boolean deleteEmploye(@PathVariable String id) {
 		return false; //TODO
 	}

@@ -44,7 +44,7 @@ export class MailcontrollerApi {
     }
 
     /**
-     * sendContactMail
+     * Post the contact mail write by the user into the sending list of the mail service
      * 
      * @param mailContact mailContact
      */
