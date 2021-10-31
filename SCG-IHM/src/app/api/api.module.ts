@@ -3,21 +3,27 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
-import { PetService } from './api/pet.service';
-import { StoreService } from './api/store.service';
-import { UserService } from './api/user.service';
+import { ApiControllerService } from './api/apiController.service';
+import { CompteControllerService } from './api/compteController.service';
+import { ConnaissanceControllerService } from './api/connaissanceController.service';
+import { EmploiControllerService } from './api/emploiController.service';
+import { EmployeControllerService } from './api/employeController.service';
+import { MailControllerService } from './api/mailController.service';
 
 @NgModule({
   imports:      [],
   declarations: [],
   exports:      [],
   providers: [
-    PetService,
-    StoreService,
-    UserService ]
+    ApiControllerService,
+    CompteControllerService,
+    ConnaissanceControllerService,
+    EmploiControllerService,
+    EmployeControllerService,
+    MailControllerService ]
 })
 export class ApiModule {
-    public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders {
+    public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders<ApiModule> {
         return {
             ngModule: ApiModule,
             providers: [ { provide: Configuration, useFactory: configurationFactory } ]

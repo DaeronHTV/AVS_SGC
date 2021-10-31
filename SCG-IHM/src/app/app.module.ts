@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//Gestion API
+import { HttpClientModule } from '@angular/common/http';
+import { ApiModule, BASE_PATH } from './api';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: BASE_PATH, useValue: 'http://localhost:8080' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

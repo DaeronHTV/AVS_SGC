@@ -1,5 +1,6 @@
 package Miage.sgc.api;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import io.swagger.annotations.ApiOperation;
  * @version 1.0
  */
 @RestController
+//@CrossOrigin(origins = "http://localhost:4200")
 @Api(value="Controller permettant d'avoir l'ensembe des informations sur l'api en cours d'utilisation")
 public class ApiController {
 	@ApiOperation(value="Retourne la version actuelle de l'api")
