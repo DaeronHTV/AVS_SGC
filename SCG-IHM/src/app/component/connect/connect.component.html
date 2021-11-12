@@ -1,1 +1,17 @@
-<p>connect works!</p>
+<div id="container">
+   <!--<img src="../../../assets/images/background2.jpg"/>-->
+   <form>
+      <div id="form">
+         <img src="../../../assets/images/Logo_with_text.png"/>
+         <h2>Se Connecter</h2>
+         <p>Veuillez vous connecter pour accéder à l'application</p>
+         <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Adresse Mail" #mail required>
+         </div>
+         <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Mot de passe" #pass required>
+         </div>
+         <button (click)="connect(mail.value, pass.value)" type="button" class="btn btn-primary">Primary</button>
+      </div>
+   </form>   
+</div>

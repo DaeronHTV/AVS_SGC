@@ -1,0 +1,32 @@
+#container{
+   z-index: relative;
+   background-image: url(../../../assets/images/background2.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   -webkit-background-size: cover;-moz-background-size: cover;
+   -o-background-size: cover;background-size: cover;
+   height: 100%;
+   display: flex;
+   form, input{ margin-right: auto; margin-left: auto;}
+   form{
+      display: flex;
+      margin: auto;
+      min-width: 40%;
+      height: 70%;
+      background-color: white;
+      #form{
+         min-width: 95%;
+         min-height: 75%;
+         margin: auto;
+         img, button, h2, p{ margin-left: 80px; }
+         img, h2{ margin-top: 15px;}
+         h2{ margin-bottom: 5px; }
+         img{ max-width: 200px; max-height: 200px; }
+         input{ 
+            margin-top: 25px;
+            max-width: 75%;
+            background-color: lightgray;
+         }
+      }
+   }
+}
