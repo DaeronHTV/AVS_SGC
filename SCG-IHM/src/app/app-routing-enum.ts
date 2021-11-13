@@ -4,5 +4,6 @@ export enum AppRoutingEnum {
    HELP = "aide",
    CONTACT = "contact",
    PERSODATA = "reglement/donnees-personnelles",
-   MENTIONSLEGALS = "reglement/mentions-legales"
+   MENTIONSLEGALS = "reglement/mentions-legales",
+   PARAMETER = "options"
 }

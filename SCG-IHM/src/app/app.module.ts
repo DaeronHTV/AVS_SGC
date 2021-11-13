@@ -15,6 +15,8 @@ import { ContactComponent } from './component/contact/contact.component';
 import { AideComponent } from './component/aide/aide.component';
 import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
+import { FooterComponent } from './component/base/footer/footer.component';
+import { ParametreComponent } from './component/parametre/parametre.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DonneespersoComponent } from './component/reglement/donneesperso/donnee
     ContactComponent,
     AideComponent,
     MentionslegalesComponent,
-    DonneespersoComponent
+    DonneespersoComponent,
+    FooterComponent,
+    ParametreComponent
   ],
   imports: [
     BrowserModule,

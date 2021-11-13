@@ -1,0 +1,17 @@
+[
+   {
+      "id": 0,
+      "name": "Accueil",
+      "route": "/home"
+   },
+   {
+      "id": 1,
+      "name": "Paramètres",
+      "route": "/options"
+   },
+   {
+      "id": 2,
+      "name": "?",
+      "route": "/aide"
+   }
+]

@@ -1,3 +1,5 @@
+@import '../../../assets/scss/Images.scss';
+
 #container{
    z-index: relative;
    background-image: url(../../../assets/images/background2.jpg);
@@ -21,7 +23,6 @@
          img, button, h2, p{ margin-left: 80px; }
          img, h2{ margin-top: 15px;}
          h2{ margin-bottom: 5px; }
-         img{ max-width: 200px; max-height: 200px; }
          input{ 
             margin-top: 25px;
             max-width: 75%;
