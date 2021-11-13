@@ -27,6 +27,7 @@ export class LangService {
   public getContent(filename: LangPathEnum): Observable<JSON>{ return this.http.get<JSON>(this.path + filename)}
 
   get<T>(filename: LangPathEnum){
+    console.log(this.path + filename);
     return this.http.get<T>(this.path + filename);
   }
 }

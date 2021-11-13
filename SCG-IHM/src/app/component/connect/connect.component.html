@@ -1,17 +1,17 @@
 <div id="container">
-   <!--<img src="../../../assets/images/background2.jpg"/>-->
    <form>
-      <div id="form">
+      <div id="form" *ngIf="content$ | async; let content">
          <img id="logo_with_text" src="../../../assets/images/Logo_with_text.png"/>
-         <h2>Se Connecter</h2>
-         <p>Veuillez vous connecter pour accéder à l'application</p>
+         <h2>{{content.title}}</h2>
+         <p>{{content.description}}</p>
          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Adresse Mail" #mail required>
+            <input type="email" class="form-control" placeholder="{{content.mailplaceholder}}" #mail required>
          </div>
          <div class="mb-3">
-            <input type="password" class="form-control" placeholder="Mot de passe" #pass required>
+            <input type="password" class="form-control" placeholder="{{content.passplaceholder}}" #pass required>
          </div>
-         <button (click)="connect(mail.value, pass.value)" type="button" class="btn btn-primary">Connection</button>
+         <button (click)="connect(mail.value, pass.value)" type="button" class="btn btn-primary">{{content.bouton}}</button>
+         <div id="envtest" *ngIf="!isProd" class="alert alert-info" role="alert">{{content.envtestdesc}}</div>
       </div>
    </form>   
 </div>

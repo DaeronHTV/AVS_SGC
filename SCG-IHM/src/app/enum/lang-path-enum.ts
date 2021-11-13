@@ -1,4 +1,5 @@
 export enum LangPathEnum {
    MENU = "menu.json",
-   HOME = "home.json"
+   HOME = "home.json",
+   CONNECT = "connect.json"
 }

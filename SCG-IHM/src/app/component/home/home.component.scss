@@ -6,7 +6,6 @@ app-menu{
 }
 .content {
   display: flex;
-  margin: 82px auto;
   padding: 0 16px;
   min-width: 314px;
   width: 100%;
@@ -41,6 +40,6 @@ app-menu{
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 791px) {
   .card{ width: 90%; }
 }

@@ -1,0 +1,8 @@
+{
+   "title": "Se Connecter",
+   "description": "Veuillez vous connecter pour accéder à l'application",
+   "mailplaceholder": "Adresse mail",
+   "passplaceholder": "Mot de passe",
+   "bouton": "connection",
+   "envtestdesc": "Vous êtes actuellement sur un environnement de test"
+}

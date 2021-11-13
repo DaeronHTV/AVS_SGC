@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LangPathEnum } from 'src/app/enum/lang-path-enum';
-import { Content, IMenu } from 'src/app/interface/menu';
+import { IMenu } from 'src/app/interface/content';
 import { LangService } from 'src/app/service/lang.service';
 
 @Component({
