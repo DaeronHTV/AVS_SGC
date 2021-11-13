@@ -1,27 +1,26 @@
+#content{
+   min-height: 100%;
+}
 .aide, .aides{margin-top: 30px;
    text-align: center;
 }
 
 .aide p{
-   font: bold italic large serif;
    font-size:xx-large;
 }
 
 .aides p{
-   font: bold italic large serif;
    font-size:x-large;
 }
 
 .questions p{
    color: orangered;
    margin-top: 30px;
-   font: bold italic large serif;
    font-size:large;
 }
 
 .reponses p{
    margin-left: 40px;
-   font:  large serif;
    font-size:large;
 }
 
@@ -35,7 +34,6 @@
 }
 
 .textimg{
-   font: bold italic large serif;
    font-size:xx-large;
 }
 

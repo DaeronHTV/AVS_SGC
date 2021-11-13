@@ -12,3 +12,13 @@ export interface IConnect{
    bouton: string,
    envtestdesc: string
 }
+
+export interface IAide{
+   //TODO Faire reste
+   questions: IQuestion[]
+}
+
+export interface IQuestion{
+   question: string,
+   reponse: string
+}

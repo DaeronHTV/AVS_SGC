@@ -1,14 +1,11 @@
 @import '../../../assets/scss/Images.scss';
 
-app-menu{
-  position: absolute;
-  top: 0; left: 0; right: 0;
-}
 .content {
   display: flex;
   padding: 0 16px;
   min-width: 314px;
   width: 100%;
+  min-height: 80%;
   flex-direction: column;
   align-items: center;
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingEnum } from './app-routing-enum';
+import { AideComponent } from './component/aide/aide.component';
 import { ConnectComponent } from './component/connect/connect.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: AppRoutingEnum.MENTIONSLEGALS, component: MentionslegalesComponent},
   {path: AppRoutingEnum.PERSODATA, component: DonneespersoComponent},
   {path: AppRoutingEnum.CONNECT, component: ConnectComponent},
-  {path: AppRoutingEnum.PARAMETER, component: ParametreComponent}
+  {path: AppRoutingEnum.PARAMETER, component: ParametreComponent},
+  {path: AppRoutingEnum.HELP, component: AideComponent}
 ];
 
 @NgModule({
