@@ -14,6 +14,11 @@ export interface IConnect{
    erreurconnection: string
 }
 
+export interface IError{
+   code: number,
+   description: string
+}
+
 export interface IAide{
    //TODO Faire reste
    questions: IQuestion[]

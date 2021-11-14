@@ -1,1 +1,8 @@
-<p>page-error works!</p>
+<ng-container *ngFor="let item of error$ | async; index as i">
+   <ng-container *ngIf="item.code === error">
+      <h1>HTTP Code Error {{item.code}}</h1>
+      <hr/>
+      <p>{{item.description}}</p>
+   </ng-container>
+</ng-container>
+

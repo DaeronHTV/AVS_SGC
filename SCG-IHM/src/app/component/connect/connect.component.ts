@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 export class ConnectComponent {
   isProd = environment.production;
   content$: Observable<IConnect>;
+  isError = false;
 
   /**
    * 
@@ -37,8 +38,6 @@ export class ConnectComponent {
       this.compManager.seeMenu = true;
       this.routeur.navigateByUrl(AppRoutingEnum.HOME);
     }
-    else{
-      this.routeur.navigateByUrl(AppRoutingEnum.CONNECT);
-    }
+    else this.isError = true;
   }
 }
