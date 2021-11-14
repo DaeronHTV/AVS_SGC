@@ -1,9 +1,12 @@
 export enum AppRoutingEnum {
-   CONNECT = "",
+   EMPTY = "",
+   CONNECT = "connect",
    HOME = "home",
    HELP = "aide",
    CONTACT = "contact",
    PERSODATA = "reglement/donnees-personnelles",
    MENTIONSLEGALS = "reglement/mentions-legales",
-   PARAMETER = "options"
+   PARAMETER = "options",
+   NOTFOUND = "**",
+   ERRORPAGE = "error"
 }

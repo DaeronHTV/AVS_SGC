@@ -17,6 +17,7 @@ import { MentionslegalesComponent } from './component/reglement/mentionslegales/
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { FooterComponent } from './component/base/footer/footer.component';
 import { ParametreComponent } from './component/parametre/parametre.component';
+import { PageErrorComponent } from './component/base/page-error/page-error.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ParametreComponent } from './component/parametre/parametre.component';
     MentionslegalesComponent,
     DonneespersoComponent,
     FooterComponent,
-    ParametreComponent
+    ParametreComponent,
+    PageErrorComponent
   ],
   imports: [
     BrowserModule,

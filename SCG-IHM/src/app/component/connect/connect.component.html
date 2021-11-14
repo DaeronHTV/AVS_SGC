@@ -12,6 +12,7 @@
          </div>
          <button (click)="connect(mail.value, pass.value)" type="button" class="btn btn-primary">{{content.bouton}}</button>
          <div id="envtest" *ngIf="!isProd" class="alert alert-info" role="alert">{{content.envtestdesc}}</div>
+         <div id="erreurco" class="alert alert-danger" role="alert">{{content.erreurconnection}}</div>
       </div>
    </form>   
 </div>

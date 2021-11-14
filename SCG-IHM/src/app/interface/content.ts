@@ -10,7 +10,8 @@ export interface IConnect{
    mailplaceholder: string,
    passplaceholder: string,
    bouton: string,
-   envtestdesc: string
+   envtestdesc: string,
+   erreurconnection: string
 }
 
 export interface IAide{

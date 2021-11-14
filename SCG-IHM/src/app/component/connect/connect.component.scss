@@ -14,7 +14,7 @@
       display: flex;
       margin: auto;
       min-width: 40%;
-      height: 70%;
+      height: 75%;
       background-color: white;
       #form{
          min-width: 95%;
@@ -28,7 +28,8 @@
             max-width: 75%;
             background-color: lightgray;
          }
-         #envtest{
+         #envtest, #erreurco{
+            min-width: 75%;
             max-width: 75%;
             margin: auto;
             margin-top: 25px;
