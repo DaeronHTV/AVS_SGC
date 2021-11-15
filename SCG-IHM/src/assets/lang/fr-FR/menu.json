@@ -2,16 +2,37 @@
    {
       "id": 0,
       "name": "Accueil",
-      "route": "/home"
+      "route": "/home",
+      "access": ["*"]
    },
    {
-      "id": 1,
-      "name": "Paramètres",
-      "route": "/options"
+      "id":1,
+      "name": "Mon Equipe",
+      "route": "/TODO",
+      "access": ["MANAGER", "ADMINISTRATEUR"]
    },
    {
       "id": 2,
+      "name": "Paramétrage",
+      "route": "/TODO",
+      "access": ["ADMINISTRATEUR"]
+   },
+   {
+      "id": 3,
+      "name": "Contact",
+      "route": "/contact",
+      "access": ["*"]
+   },
+   {
+      "id": 4,
+      "name": "Options",
+      "route": "/options",
+      "access": ["*"]
+   },
+   {
+      "id": 5,
       "name": "?",
-      "route": "/aide"
+      "route": "/aide",
+      "access": ["*"]
    }
 ]

@@ -1,1 +1,12 @@
-<p>contact works!</p>
+<div id="container" class="bg1">
+   <form>
+      <div id="form" *ngIf="contact$ | async; let contact">
+         <h1>{{contact.titre}}</h1>
+         <p>{{contact.description}}</p>
+         <input type="email" class="form-control" placeholder="{{contact.mail}}" #mail required>
+         <input type="text" class="form-control" placeholder="{{contact.sujet}}" #sujet required>
+         <textarea placeholder="{{contact.content}}" #content required></textarea>
+         <button type="button" class="btn btn-primary">{{contact.btnenvoi}}</button>
+      </div>
+   </form>   
+</div>

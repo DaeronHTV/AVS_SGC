@@ -3,5 +3,6 @@ export enum LangPathEnum {
    HOME = "home.json",
    CONNECT = "connect.json",
    AIDE = "aide.json",
-   ERROR = "error.json"
+   ERROR = "error.json",
+   CONTACT = "contact.json"
 }

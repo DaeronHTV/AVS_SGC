@@ -1,7 +1,8 @@
 export interface IMenu {
    id: number,
    name: string,
-   route: string
+   route: string,
+   access: string[]
 }
 
 export interface IConnect{
@@ -16,6 +17,15 @@ export interface IConnect{
 
 export interface IError{
    code: number,
+   description: string
+}
+
+export interface IContact{
+   titre: string,
+   mail: string,
+   sujet: string,
+   content: string,
+   btnenvoi: string,
    description: string
 }
 

@@ -6,9 +6,11 @@
  
    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
      <ul class="navbar-nav">
-       <li class="nav-item" *ngFor="let item of menu$ | async; index as i">
-         <a class="nav-link" routerLinkActive="active" [routerLink]="item.route">{{item.name}}</a>
-       </li>
+       <ng-container *ngFor="let item of menu$ | async; index as i">
+        <li class="nav-item" *ngIf="isVisible(item)">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="item.route">{{item.name}}</a>
+        </li>
+       </ng-container>
        <!--<li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
            Dropdown

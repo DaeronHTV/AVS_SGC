@@ -7,10 +7,13 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private isAuth: boolean;
   private codeTest: string = "test";
+  private _access: string = "ADMINISTRATEUR";
 
   constructor() { 
     this.isAuth = false;
   }
+
+  get access(){ return this._access; }
 
   get isConnected(){ return this.isAuth; }
   set isConnected(value: boolean){ this.isAuth = value; }
