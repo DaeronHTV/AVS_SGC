@@ -4,5 +4,7 @@ export enum LangPathEnum {
    CONNECT = "connect.json",
    AIDE = "aide.json",
    ERROR = "error.json",
-   CONTACT = "contact.json"
+   CONTACT = "contact.json",
+   CONNAISSANCE = "parameters/knowledges",
+   COMPETENCE = "parameters/skills"
 }

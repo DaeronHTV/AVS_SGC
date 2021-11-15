@@ -20,6 +20,11 @@ export class MenuComponent {
     this.menu$ = this.lang.get<IMenu[]>(LangPathEnum.MENU);
   }
 
+  /**
+   * 
+   * @param itemMenu 
+   * @returns 
+   */
   public isVisible(itemMenu: IMenu): boolean{
     if(!itemMenu.access.includes("*")){
       if(!environment.production){
@@ -31,6 +36,10 @@ export class MenuComponent {
     else{ return true; } 
     //TODO Faire le reste
     return false;
+  }
+
+  public hasSubRoute(itemMenu: IMenu): boolean{
+    return itemMenu?.subroute === undefined ? false : true;
   }
 
 }

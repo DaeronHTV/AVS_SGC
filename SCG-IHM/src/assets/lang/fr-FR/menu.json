@@ -8,13 +8,26 @@
    {
       "id":1,
       "name": "Mon Equipe",
-      "route": "/TODO",
+      "subroute": [
+
+      ],
       "access": ["MANAGER", "ADMINISTRATEUR"]
    },
    {
       "id": 2,
       "name": "Paramétrage",
-      "route": "/TODO",
+      "subroute": [
+         {
+            "id": 0,
+            "name": "Connaissances",
+            "route": "parameters/knowledge"
+         },
+         {
+            "id": 1,
+            "name": "Compétences",
+            "route": "parameters/skills"
+         }
+      ],
       "access": ["ADMINISTRATEUR"]
    },
    {

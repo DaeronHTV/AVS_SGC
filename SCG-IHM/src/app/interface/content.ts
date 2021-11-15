@@ -1,7 +1,8 @@
 export interface IMenu {
    id: number,
    name: string,
-   route: string,
+   route: string | undefined,
+   subroute: IMenu[] | undefined,
    access: string[]
 }
 
