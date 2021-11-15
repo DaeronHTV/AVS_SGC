@@ -35,11 +35,14 @@ export class CompteControllerService {
     constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
         if (basePath) {
             this.basePath = basePath;
+            console.log(this.basePath);
         }
         if (configuration) {
+            console.log(configuration);
             this.configuration = configuration;
             this.basePath = basePath || configuration.basePath || this.basePath;
         }
+        console.log(this.basePath);
     }
 
     /**

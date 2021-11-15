@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-   <img id="logo_with_text" title="Dedalus Logo" alt="Dedalus Logo" src="../../../assets/images/Logo_with_text.png"/>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <img id="logo_with_text" title="Dedalus Logo" alt="Dedalus Logo" src="../../../assets/images/Logo_with_text.png" loading="lazy"/>
+   <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
      <span class="navbar-toggler-icon"></span>
    </button>
  
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     <ul class="navbar-nav mr-auto">
+   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+     <ul class="navbar-nav">
        <li class="nav-item" *ngFor="let item of menu$ | async; index as i">
-         <a class="nav-link" href="{{item.route}}">{{item.name}}</a>
+         <a class="nav-link" routerLinkActive="active" [routerLink]="item.route">{{item.name}}</a>
        </li>
        <!--<li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">

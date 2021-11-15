@@ -18,6 +18,7 @@ import { DonneespersoComponent } from './component/reglement/donneesperso/donnee
 import { FooterComponent } from './component/base/footer/footer.component';
 import { ParametreComponent } from './component/parametre/parametre.component';
 import { PageErrorComponent } from './component/base/page-error/page-error.component';
+import { ToastComponent } from './component/base/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { PageErrorComponent } from './component/base/page-error/page-error.compo
     DonneespersoComponent,
     FooterComponent,
     ParametreComponent,
-    PageErrorComponent
+    PageErrorComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ApiModule
   ],
   providers: [{ provide: BASE_PATH, useValue: 'http://localhost:8080' }],
   bootstrap: [AppComponent]

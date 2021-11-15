@@ -5,8 +5,8 @@ import { AppRoutingEnum } from 'src/app/app-routing-enum';
 import { LangPathEnum } from 'src/app/enum/lang-path-enum';
 import { IConnect } from 'src/app/interface/content';
 import { AuthService } from 'src/app/service/auth.service';
-import { ComponentManagerService } from 'src/app/service/component-manager.service';
 import { LangService } from 'src/app/service/lang.service';
+import { ComponentManagerService } from 'src/app/service/manager/component-manager.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

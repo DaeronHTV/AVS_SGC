@@ -22,15 +22,8 @@ const routes: Routes = [
   {path: AppRoutingEnum.NOTFOUND, component: PageErrorComponent}
 ];
 
-/*const routesSpec: Routes = [
-  {path: AppRoutingEnum.CONNECT, component: ConnectComponent}
-]*/
-
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-    //RouterModule.forRoot(routesSpec, {onSameUrlNavigation: 'reload'})
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
