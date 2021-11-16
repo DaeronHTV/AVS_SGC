@@ -8,6 +8,7 @@ import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
 import { OptionsComponent } from './component/options/options.component';
 import { CompetenceComponent } from './component/parametrage/competence/competence.component';
+import { ConnaissanceDetailsComponent } from './component/parametrage/connaissance/connaissance-details/connaissance-details.component';
 import { ConnaissanceComponent } from './component/parametrage/connaissance/connaissance.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: AppRoutingEnum.HELP, component: AideComponent},
   {path: AppRoutingEnum.CONNAISSANCE, component: ConnaissanceComponent},
   {path: AppRoutingEnum.COMPETENCE, component: CompetenceComponent},
+  {path: AppRoutingEnum.CONNAISSANCEDETAIL, component: ConnaissanceDetailsComponent},
   //A PLACER A LA FIN
   {path: AppRoutingEnum.NOTFOUND, component: PageErrorComponent}
   

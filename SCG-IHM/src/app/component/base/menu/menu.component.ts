@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AppRoutingEnum } from 'src/app/app-routing-enum';
 import { LangPathEnum } from 'src/app/enum/lang-path-enum';
 import { IMenu } from 'src/app/interface/content';
 import { AuthService } from 'src/app/service/auth.service';
@@ -17,7 +19,7 @@ export class MenuComponent {
   isMenuCollapsed = true;
   
 
-  constructor(private lang: LangService, private auth: AuthService) { 
+  constructor(private lang: LangService, private auth: AuthService, private router: Router) { 
     this.menu$ = this.lang.get<IMenu[]>(LangPathEnum.MENU);
     this.profil$ = this.lang.get<IMenu[]>(LangPathEnum.PROFIL);
   }
@@ -38,6 +40,10 @@ export class MenuComponent {
     else{ return true; } 
     //TODO Faire le reste
     return false;
+  }
+
+  public disconnect(): void {
+    this.router.navigateByUrl(AppRoutingEnum.CONNECT);
   }
 
   public hasSubRoute(itemMenu: IMenu): boolean{

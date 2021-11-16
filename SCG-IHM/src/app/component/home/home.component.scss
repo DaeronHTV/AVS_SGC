@@ -1,15 +1,3 @@
-@import '../../../assets/scss/Images.scss';
-
-.content {
-  display: flex;
-  padding: 0 16px;
-  min-width: 314px;
-  width: 100%;
-  min-height: 80%;
-  flex-direction: column;
-  align-items: center;
-}
-
 .card-container {
   display: flex; flex-wrap: wrap;
   min-width: 100%; margin-left: auto;

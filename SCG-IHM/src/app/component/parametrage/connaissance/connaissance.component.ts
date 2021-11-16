@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Connaissance, ConnaissanceControllerService } from 'src/app/api';
 import { ToastService } from 'src/app/service/manager/toast.service';
@@ -14,7 +15,8 @@ export class ConnaissanceComponent {
   loading: boolean = true;
 
 
-  constructor(private apiConnaissance: ConnaissanceControllerService, private toast: ToastService, private cd: ChangeDetectorRef) { 
+  constructor(private apiConnaissance: ConnaissanceControllerService, private toast: ToastService, 
+    private cd: ChangeDetectorRef, private router: Router) { 
     this.apiConnaissance.getAllConnaissanceUsingGET(undefined, true).subscribe(
       (result) => {
         this.listConnaissance = result;
@@ -33,5 +35,10 @@ export class ConnaissanceComponent {
   get isListFilled(): boolean{ return this.listConnaissance.length > 0; }
   get isLoading(): boolean { return this.loading; }
   public indexList(item: Connaissance): number{ return this.listConnaissance.indexOf(item); }
+
+  public goToDetails(item: Connaissance): void{
+    this.router.navigate(['parameters/knowledges', item.id]);
+    console.log(item);
+  }
 
 }

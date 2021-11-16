@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
+@import './assets/scss/Images.scss';
+@import './assets/scss/bouton.scss';
 @import '~bootstrap/scss/bootstrap';
-body,html{ height: 100%; }
+@import './assets/scss/form.scss';
 
 .toastMessage {
    position: fixed; bottom: 50px;
    right: 10px; z-index: 9999;
 }
+.content {
+   display: flex;padding: 0 16px;
+   min-width: 314px;width: 100%;
+   min-height: 80%;
+   flex-direction: column;
+   align-items: center;
+ }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -37,6 +37,9 @@
         <li *ngFor="let item of profil$ | async; index as i">
           <a class="dropdown-item" [routerLink]="item.route">{{item.name}}</a>
         </li>
+        <li>
+          <a class="dropdown-item" (click)="disconnect()">Deconnexion</a>
+        </li>
       </ul>
      </form>
    </div>

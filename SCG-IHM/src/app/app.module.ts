@@ -23,7 +23,7 @@ import { ConnaissanceComponent } from './component/parametrage/connaissance/conn
 import { CompetenceComponent } from './component/parametrage/competence/competence.component';
 import { EmployeComponent } from './component/parametrage/employe/employe.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ConnaissanceDetailsComponent } from './component/parametrage/connaissance/connaissance-details/connaissance-details.component';
 import { CompetenceDetailsComponent } from './component/parametrage/competence/competence-details/competence-details.component';
 
@@ -31,6 +31,8 @@ import { CompetenceDetailsComponent } from './component/parametrage/competence/c
   declarations: [
     AppComponent,
     ConnectComponent,
+    ConnaissanceDetailsComponent,
+    CompetenceDetailsComponent,
     HomeComponent,
     MenuComponent,
     ContactComponent,
@@ -43,9 +45,7 @@ import { CompetenceDetailsComponent } from './component/parametrage/competence/c
     OptionsComponent,
     ConnaissanceComponent,
     CompetenceComponent,
-    EmployeComponent,
-    ConnaissanceDetailsComponent,
-    CompetenceDetailsComponent
+    EmployeComponent
   ],
   imports: [
     BrowserModule,

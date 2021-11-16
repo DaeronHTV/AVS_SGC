@@ -9,9 +9,7 @@ export class AuthService {
   private codeTest: string = "test";
   private _access: string = "ADMINISTRATEUR";
 
-  constructor() { 
-    this.isAuth = false;
-  }
+  constructor() { this.isAuth = false; }
 
   get access(){ return this._access; }
 
