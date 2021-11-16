@@ -1,0 +1,51 @@
+<div class="content bg1" role="main">
+   <div *ngIf="isLoading" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+   </div>
+
+   <table class="table table-hover">
+      <tbody>
+          <tr *ngIf="isLoading" class="text-center">
+              <td colspan="7">
+               <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+               </div>
+              </td>
+          </tr>
+          <tr *ngIf="!isListFilled && !isLoading" class="text-center">
+              <td colspan="7">Aucune liaison</td>
+          </tr>
+          <tr *ngFor="let liaison of listConnaissance" style="cursor: pointer">
+            <td class="align-middle font-weight-bold">{{ liaison.code }}</td>
+            <td class="align-middle">{{ liaison.libelle }}</td>
+            <td class="align-middle">test</td>
+            <td class="align-middle"><i class="fas"></i></td>
+            <td class="align-middle">
+              <button type="button"
+                      class="btn btn-link"
+                      placement="left"
+                      ngbTooltip="{{ 'test' }}">
+                <i class="fas fa-cog fa-2x text-dark"></i>
+              </button>
+              <button type="button"
+                      class="btn btn-link"
+                      placement="left"
+                      ngbTooltip="{{ 'test' }}" >
+                <i class="fas fa-file-download fa-2x"></i>
+              </button>
+              <button type="button"
+                      class="btn btn-link"
+                      ngbTooltip="{{ 'test' }}"
+                      placement="left">
+                <i class="fas fa-2x fa-trash text-danger"></i>
+              </button>
+            </td>
+            <td class="align-middle text-primary">
+              <i class="far fa-2x"
+                 placement="left"
+                 ngbTooltip="{{ 'test' }}"></i>
+            </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

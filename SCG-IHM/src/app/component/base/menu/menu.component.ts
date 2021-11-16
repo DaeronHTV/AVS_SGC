@@ -13,11 +13,13 @@ import { environment } from 'src/environments/environment';
 })
 export class MenuComponent {
   menu$: Observable<IMenu[]>;
+  profil$: Observable<IMenu[]>;
   isMenuCollapsed = true;
   
 
   constructor(private lang: LangService, private auth: AuthService) { 
     this.menu$ = this.lang.get<IMenu[]>(LangPathEnum.MENU);
+    this.profil$ = this.lang.get<IMenu[]>(LangPathEnum.PROFIL);
   }
 
   /**

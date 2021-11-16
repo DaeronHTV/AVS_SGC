@@ -6,7 +6,13 @@ export enum AppRoutingEnum {
    CONTACT = "contact",
    PERSODATA = "reglement/donnees-personnelles",
    MENTIONSLEGALS = "reglement/mentions-legales",
-   PARAMETER = "options",
+   OPTIONS = "options",
    NOTFOUND = "**",
-   ERRORPAGE = "error"
+   ERRORPAGE = "error",
+   CONNAISSANCE = "parameters/knowledges",
+   COMPETENCE = "parameters/skills",
+   EMPLOYE = "parameters/employees",
+   COMPETENCEDETAIL = "parameters/skills/:id",
+   CONNAISSANCEDETAIL = "parameters/knowledges/:id",
+   EMPLOYEDETAIL = "parameters/employees/:id"
 }

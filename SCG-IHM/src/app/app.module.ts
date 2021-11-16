@@ -16,9 +16,12 @@ import { AideComponent } from './component/aide/aide.component';
 import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { FooterComponent } from './component/base/footer/footer.component';
-import { ParametreComponent } from './component/parametre/parametre.component';
 import { PageErrorComponent } from './component/base/page-error/page-error.component';
 import { ToastComponent } from './component/base/toast/toast.component';
+import { OptionsComponent } from './component/options/options.component';
+import { ConnaissanceComponent } from './component/parametrage/connaissance/connaissance.component';
+import { CompetenceComponent } from './component/parametrage/competence/competence.component';
+import { EmployeComponent } from './component/parametrage/employe/employe.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,12 @@ import { ToastComponent } from './component/base/toast/toast.component';
     MentionslegalesComponent,
     DonneespersoComponent,
     FooterComponent,
-    ParametreComponent,
     PageErrorComponent,
-    ToastComponent
+    ToastComponent,
+    OptionsComponent,
+    ConnaissanceComponent,
+    CompetenceComponent,
+    EmployeComponent
   ],
   imports: [
     BrowserModule,

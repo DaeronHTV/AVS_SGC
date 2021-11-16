@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import Miage.sgc.api.object.request.ConnaissanceRequest;
+import Miage.sgc.data.dao.DAOBuilder;
+import Miage.sgc.data.dao.base.DAOConnaissance;
 import Miage.sgc.data.object.base.Connaissance;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -38,7 +40,8 @@ public class ConnaissanceController {
 	@ApiOperation(value="Retourne l'ensemble des connaissances disponible")
 	@RequestMapping(method=RequestMethod.GET, value="api/sgc/knowledge/all")
 	public List<Connaissance> getAllConnaissance(){
-		return null; //TODO
+		DAOConnaissance dao = DAOBuilder.DAOConnaissance();
+		return dao.readAll(); //TODO
 	}
 	
 	@ApiOperation(value="Retourne un ensemble de connaissance en fonction de parametre de recherche")

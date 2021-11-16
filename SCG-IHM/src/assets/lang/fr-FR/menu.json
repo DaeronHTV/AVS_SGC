@@ -20,12 +20,22 @@
          {
             "id": 0,
             "name": "Connaissances",
-            "route": "parameters/knowledge"
+            "route": "/parameters/knowledges"
          },
          {
             "id": 1,
             "name": "Compétences",
-            "route": "parameters/skills"
+            "route": "/parameters/skills"
+         },
+         {
+            "id": 1,
+            "name": "Emplois",
+            "route": "/parameters/emplois"
+         },
+         {
+            "id": 1,
+            "name": "Employe",
+            "route": "/parameters/employe"
          }
       ],
       "access": ["ADMINISTRATEUR"]

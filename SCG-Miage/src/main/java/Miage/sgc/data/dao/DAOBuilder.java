@@ -18,4 +18,6 @@ public class DAOBuilder {
 	public static DAOEmploye DAOEmploye() { return new DAOEmploye(connection); }
 	
 	public static DAOEmploi DAOEmploi() { return new DAOEmploi(connection); }
+	
+	public static DAOConnaissance DAOConnaissance() { return new DAOConnaissance(connection); }
 }

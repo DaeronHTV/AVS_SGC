@@ -27,22 +27,17 @@
           </li>
         </ng-template>
         <!--GESTION DES MENUS AVEC SOUS-MENUS-->
-
-        
        </ng-container>
-       <!--<li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-           Dropdown
-         </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a class="dropdown-item" href="#">Action</a>
-         </div>
-       </li>-->
      </ul>
-     <form class="form-inline my-2 my-lg-0">
-       <a class="circle-link" title="Profil" href="https://discord.gg/angular" target="_blank" rel="noopener">
+     <form class="dropdown">
+       <a class="circle-link" title="Profil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
          <img src="../../../assets/images/profil_no_image.jpg"/>
        </a>
+       <ul id="menuprofil" class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li *ngFor="let item of profil$ | async; index as i">
+          <a class="dropdown-item" [routerLink]="item.route">{{item.name}}</a>
+        </li>
+      </ul>
      </form>
    </div>
  </nav>

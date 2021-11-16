@@ -6,7 +6,9 @@ import { PageErrorComponent } from './component/base/page-error/page-error.compo
 import { ConnectComponent } from './component/connect/connect.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
-import { ParametreComponent } from './component/parametre/parametre.component';
+import { OptionsComponent } from './component/options/options.component';
+import { CompetenceComponent } from './component/parametrage/competence/competence.component';
+import { ConnaissanceComponent } from './component/parametrage/connaissance/connaissance.component';
 import { DonneespersoComponent } from './component/reglement/donneesperso/donneesperso.component';
 import { MentionslegalesComponent } from './component/reglement/mentionslegales/mentionslegales.component';
 
@@ -17,9 +19,13 @@ const routes: Routes = [
   {path: AppRoutingEnum.MENTIONSLEGALS, component: MentionslegalesComponent},
   {path: AppRoutingEnum.PERSODATA, component: DonneespersoComponent},
   {path: AppRoutingEnum.CONNECT, component: ConnectComponent},
-  {path: AppRoutingEnum.PARAMETER, component: ParametreComponent},
+  {path: AppRoutingEnum.OPTIONS, component: OptionsComponent},
   {path: AppRoutingEnum.HELP, component: AideComponent},
+  {path: AppRoutingEnum.CONNAISSANCE, component: ConnaissanceComponent},
+  {path: AppRoutingEnum.COMPETENCE, component: CompetenceComponent},
+  //A PLACER A LA FIN
   {path: AppRoutingEnum.NOTFOUND, component: PageErrorComponent}
+  
 ];
 
 @NgModule({
