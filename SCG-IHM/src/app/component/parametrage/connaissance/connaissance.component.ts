@@ -32,5 +32,6 @@ export class ConnaissanceComponent {
 
   get isListFilled(): boolean{ return this.listConnaissance.length > 0; }
   get isLoading(): boolean { return this.loading; }
+  public indexList(item: Connaissance): number{ return this.listConnaissance.indexOf(item); }
 
 }

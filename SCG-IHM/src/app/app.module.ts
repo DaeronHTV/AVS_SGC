@@ -22,6 +22,10 @@ import { OptionsComponent } from './component/options/options.component';
 import { ConnaissanceComponent } from './component/parametrage/connaissance/connaissance.component';
 import { CompetenceComponent } from './component/parametrage/competence/competence.component';
 import { EmployeComponent } from './component/parametrage/employe/employe.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import { ConnaissanceDetailsComponent } from './component/parametrage/connaissance/connaissance-details/connaissance-details.component';
+import { CompetenceDetailsComponent } from './component/parametrage/competence/competence-details/competence-details.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +43,18 @@ import { EmployeComponent } from './component/parametrage/employe/employe.compon
     OptionsComponent,
     ConnaissanceComponent,
     CompetenceComponent,
-    EmployeComponent
+    EmployeComponent,
+    ConnaissanceDetailsComponent,
+    CompetenceDetailsComponent
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ApiModule
+    ApiModule,
+    BrowserAnimationsModule
   ],
   providers: [{ provide: BASE_PATH, useValue: 'http://localhost:8080' }],
   bootstrap: [AppComponent]
