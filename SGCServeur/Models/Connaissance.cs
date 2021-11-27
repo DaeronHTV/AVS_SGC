@@ -10,6 +10,7 @@ namespace SGCServeur.Models
         public Connaissance()
         {
             Emploiconnaissances = new HashSet<Emploiconnaissance>();
+            Employeconnaissances = new HashSet<Employeconnaissance>();
         }
 
         public byte[] Id { get; set; }
@@ -20,5 +21,6 @@ namespace SGCServeur.Models
         public byte[] Datemaj { get; set; }
 
         public virtual ICollection<Emploiconnaissance> Emploiconnaissances { get; set; }
+        public virtual ICollection<Employeconnaissance> Employeconnaissances { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace SGCServeur.Models
         public Employe()
         {
             Employecompetences = new HashSet<Employecompetence>();
+            Employeconnaissances = new HashSet<Employeconnaissance>();
             Employeemplois = new HashSet<Employeemploi>();
         }
 
@@ -25,7 +26,9 @@ namespace SGCServeur.Models
         public byte[] Dateinsertion { get; set; }
         public byte[] Datemaj { get; set; }
 
+        public virtual Compte Compte { get; set; }
         public virtual ICollection<Employecompetence> Employecompetences { get; set; }
+        public virtual ICollection<Employeconnaissance> Employeconnaissances { get; set; }
         public virtual ICollection<Employeemploi> Employeemplois { get; set; }
     }
 }

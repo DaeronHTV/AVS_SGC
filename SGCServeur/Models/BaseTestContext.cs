@@ -18,6 +18,7 @@ namespace SGCServeur.Models
         }
 
         public virtual DbSet<Competence> Competences { get; set; }
+        public virtual DbSet<Compte> Comptes { get; set; }
         public virtual DbSet<Connaissance> Connaissances { get; set; }
         public virtual DbSet<Emploi> Emplois { get; set; }
         public virtual DbSet<Emploicompetence> Emploicompetences { get; set; }
@@ -25,6 +26,7 @@ namespace SGCServeur.Models
         public virtual DbSet<Emploiservice> Emploiservices { get; set; }
         public virtual DbSet<Employe> Employes { get; set; }
         public virtual DbSet<Employecompetence> Employecompetences { get; set; }
+        public virtual DbSet<Employeconnaissance> Employeconnaissances { get; set; }
         public virtual DbSet<Employeemploi> Employeemplois { get; set; }
         public virtual DbSet<Service> Services { get; set; }
 
@@ -72,6 +74,52 @@ namespace SGCServeur.Models
                     .IsRequired()
                     .HasColumnType("VARCHAR2(100)")
                     .HasColumnName("LIBELLE");
+            });
+
+            modelBuilder.Entity<Compte>(entity =>
+            {
+                entity.ToTable("COMPTE");
+
+                entity.HasIndex(e => e.Employeid, "IX_COMPTE_EMPLOYEID")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("RAW(16)")
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.Dateinsertion)
+                    .HasColumnType("TIMESTAMP")
+                    .HasColumnName("DATEINSERTION")
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+                entity.Property(e => e.Datemaj)
+                    .HasColumnType("TIMESTAMP")
+                    .HasColumnName("DATEMAJ");
+
+                entity.Property(e => e.Employeid)
+                    .IsRequired()
+                    .HasColumnType("RAW(16)")
+                    .HasColumnName("EMPLOYEID");
+
+                entity.Property(e => e.Mail)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR2(50)")
+                    .HasColumnName("MAIL");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR2(50)")
+                    .HasColumnName("PASSWORD");
+
+                entity.Property(e => e.Typecompte)
+                    .HasColumnType("VARCHAR2(30)")
+                    .HasColumnName("TYPECOMPTE")
+                    .HasDefaultValueSql("\"MEMBRE\"");
+
+                entity.HasOne(d => d.Employe)
+                    .WithOne(p => p.Compte)
+                    .HasForeignKey<Compte>(d => d.Employeid)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<Connaissance>(entity =>
@@ -349,6 +397,44 @@ namespace SGCServeur.Models
 
                 entity.HasOne(d => d.Employe)
                     .WithMany(p => p.Employecompetences)
+                    .HasForeignKey(d => d.Employeid)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+            });
+
+            modelBuilder.Entity<Employeconnaissance>(entity =>
+            {
+                entity.ToTable("EMPLOYECONNAISSANCE");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("RAW(16)")
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.Connaissanceid)
+                    .IsRequired()
+                    .HasColumnType("RAW(16)")
+                    .HasColumnName("CONNAISSANCEID");
+
+                entity.Property(e => e.Dateacquisition)
+                    .HasColumnType("TIMESTAMP")
+                    .HasColumnName("DATEACQUISITION");
+
+                entity.Property(e => e.Employeid)
+                    .IsRequired()
+                    .HasColumnType("RAW(16)")
+                    .HasColumnName("EMPLOYEID");
+
+                entity.Property(e => e.Niveau)
+                    .HasColumnType("NUMBER(1)")
+                    .HasColumnName("NIVEAU")
+                    .HasDefaultValueSql("0");
+
+                entity.HasOne(d => d.Connaissance)
+                    .WithMany(p => p.Employeconnaissances)
+                    .HasForeignKey(d => d.Connaissanceid)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.HasOne(d => d.Employe)
+                    .WithMany(p => p.Employeconnaissances)
                     .HasForeignKey(d => d.Employeid)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
