@@ -1,48 +1,44 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
-using System.Threading.Tasks;
+using SGCServeur.Config;
 
 namespace SGCServeur
 {
     public class Startup
     {
+        private readonly string ConnectionString;
+        private readonly ApiInformation ApiInformation;
+        //private readonly Provider ProviderApi;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            ApiInformation = Configuration.GetSection(nameof(ApiInformation)).Get<ApiInformation>();
         }
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllersWithViews();
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers();
             services.AddOpenApiDocument(document =>
             {
                 document.PostProcess = d =>
                 {
-                    d.Info.Title = "SGCServeur";
-                    d.Info.Description = "Serveur de gestion des compétences du logiciel SCG";
-                    d.Info.Version = "Alpha";
-                    d.Info.License = new NSwag.OpenApiLicense
-                    {
-                        Name = "License Dedalus",
-                        Url = "https://www.dedalus.com/fr/fr/"
-                    };
-                    d.Info.Contact = new NSwag.OpenApiContact
-                    {
-                        Name = "Aurélien Avanzino",
-                        Email = "aurelien.avanzino@dedalus.eu"
-                    };
+                    d.Info.Title = ApiInformation.Title;
+                    d.Info.Description = ApiInformation.Description;
+                    d.Info.Version = ApiInformation.Version;
+                    d.Info.License = ApiInformation.License;
+                    d.Info.Contact = ApiInformation.Contact;
                 };
             });
         }

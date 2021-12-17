@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGCServeur", "SGCServeur\SGCServeur.csproj", "{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Api", "Dedalus.Core.Api\Core.Api.csproj", "{EC6656D2-1181-4971-BA80-7A0E40C5432C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6656D2-1181-4971-BA80-7A0E40C5432C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6656D2-1181-4971-BA80-7A0E40C5432C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6656D2-1181-4971-BA80-7A0E40C5432C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6656D2-1181-4971-BA80-7A0E40C5432C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4873326E-0029-4655-B634-345C65011E24}
+	EndGlobalSection
+EndGlobal
