@@ -9,7 +9,7 @@ namespace SGCServeur.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [OpenApiTag("Api", Description = "Informations sur le serveur")]
+    [OpenApiTag("Api", Description = "Information about the server")]
     public class ApiController : ControllerBase
     {
         private BaseTestContext context;
@@ -20,27 +20,21 @@ namespace SGCServeur.Controllers
         }
 
         [HttpGet, Route("version/api")]
-        [Description("Retourne la version actuelle du serveur")]
+        [Description("Give the current version of the server")]
         public ActionResult<string> GetVersion()
         {
             return "alpha";
         }
 
         [HttpGet, Route("version/dotnet")]
-        [Description("Retourne la version dotnet")]
+        [Description("Give the dotnet version used by the server")]
         public async Task<int> GetDotNetVersion()
         {
             return Environment.Version.Major;
         }
 
-        [HttpGet, Route("database-info")]
-        [Description("Retourne les informations sur la base de données")]
-        public async Task<string> GetDatabaseInfo()
-        {
-            return null;
-        }
-
         [HttpGet, Route("verison/database-schema")]
+        [Description("Give the version of the database")]
         public async Task<string> GetDatabaseVersion()
         {
             throw new Exception("Not Implemented Yet !");

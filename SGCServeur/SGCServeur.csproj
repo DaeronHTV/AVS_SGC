@@ -26,4 +26,8 @@
     <Folder Include="Models\Version\V1\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dedalus.Core.Api\Core.Api.csproj" />
+  </ItemGroup>
+
 </Project>

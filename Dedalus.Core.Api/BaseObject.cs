@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Core.Api
 {
-    public class BaseObject
+    public class BaseObject: IBaseObject
     {
+        public BaseObject(Guid id)
+        {
+           
+        }
 
+        public byte[] Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Code { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime Dateinsertion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime Datemaj { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

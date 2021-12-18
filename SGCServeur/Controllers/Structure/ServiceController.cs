@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace SGCServeur.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/struct/[controller]")]
     [OpenApiTag("Service", Description = "Gestion des services")]
     public class ServiceController : ControllerBase
     {
@@ -20,25 +20,25 @@ namespace SGCServeur.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        [Description("Récupère le service associé via son Id")]
-        public async Task<string> GetServiceById([FromRoute]string id)
+        [Description("Get the service by it Id")]
+        public async Task<string> GetServiceById([FromRoute][Description("Id of the service needed")]string id)
         {
-            return null;
+            throw new NotImplementedException("Not Impleted Yet !");
         }
 
         [HttpGet]
         [Route("{code}")]
-        [Description("Récupère le service en fonction de son code")]
-        public async Task<string> GetServiceByCode([FromRoute]string code)
+        [Description("Get the service by the code")]
+        public async Task<string> GetServiceByCode([FromRoute][Description("The code of the service")]string code)
         {
-            return null;
+            throw new NotImplementedException("Not Impleted Yet !");
         }
 
         [HttpPost, Route("create")]
         [Description("Créer un nouveau service en base de données")]
         public async Task CreateService([FromBody]string service)
         {
-
+            throw new NotImplementedException("Not Impleted Yet !");
         }
     }
 }

@@ -2,6 +2,7 @@
 using NSwag.Annotations;
 using SGCServeur.LibrairieBdd;
 using SGCServeur.Models.Bdd;
+using System;
 using System.ComponentModel;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace SGCServeur.Controllers.Structure
 {
     [ApiController]
-    [Route("api/sgc/[controller]")]
+    [Route("api/struct/[controller]")]
     [OpenApiTag("Compte", Description = "Controller which allows to manipulate the data of account in database")]
     public class CompteController : ControllerBase
     {
@@ -26,7 +27,7 @@ namespace SGCServeur.Controllers.Structure
         [SwaggerResponse(HttpStatusCode.BadRequest, typeof(BadRequestResult), Description = "Id or data not given well")]
         [SwaggerResponse(HttpStatusCode.NotFound, typeof(NotFoundResult), Description = "The account to update doesn't exist")]
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "The account was updated with success")]
-        public async Task<ActionResult<bool>> UpdateAccount([Description("Datas to update")][FromBody] Compte compte, [Description("Account's Id")][FromRoute] string id)
+        public async Task<ActionResult<bool>> Update([Description("Datas to update")][FromBody] Compte compte, [Description("Account's Id")][FromRoute] string id)
         {
             if (string.IsNullOrWhiteSpace(id) || compte is null)
             {
@@ -43,13 +44,20 @@ namespace SGCServeur.Controllers.Structure
         [Description("Create a new account in the database")]
         [SwaggerResponse(HttpStatusCode.Conflict, typeof(ConflictResult), Description = "An account with the same code already exists")]
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "The account was created with success")]
-        public async Task<ActionResult<bool>> CreateAccount([FromBody] Compte compte)
+        public async Task<ActionResult<bool>> Create([FromBody] Compte compte)
         {
             if (dao.Contains(compte.Employe.Code))
             {
                 return Conflict();
             }
             return dao.Create(compte);
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public async Task<ActionResult<Compte>> Delete([FromRoute] string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

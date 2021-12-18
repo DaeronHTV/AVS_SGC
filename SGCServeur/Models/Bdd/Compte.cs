@@ -5,7 +5,7 @@ using System;
 
 namespace SGCServeur.Models.Bdd
 {
-    public partial class Compte: BaseObject
+    public partial class Compte
     {
         public byte[] Id { get; set; }
         public byte[] Employeid { get; set; }

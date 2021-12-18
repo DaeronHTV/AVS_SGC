@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Core.Api;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
 
 namespace SGCServeur.Models.Bdd
 {
-    public partial class Employe
+    public partial class Employe: IBaseObject
     {
         public Employe()
         {
@@ -24,7 +25,7 @@ namespace SGCServeur.Models.Bdd
         public byte[] Telephone { get; set; }
         public string Mail { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime Datemaj { get; set; }
+        public DateTime? Datemaj { get; set; }
 
         public virtual Compte Compte { get; set; }
         public virtual ICollection<Employecompetence> Employecompetences { get; set; }

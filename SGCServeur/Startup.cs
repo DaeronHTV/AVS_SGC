@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using SGCServeur.Config;
+using SGCServeur.Models.Bdd;
 
 namespace SGCServeur
 {
@@ -28,6 +29,7 @@ namespace SGCServeur
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BaseTestContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers();
             services.AddOpenApiDocument(document =>
