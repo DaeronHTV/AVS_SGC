@@ -2,7 +2,7 @@
 
 namespace Core.Api.Result
 {
-    public interface IResult<T> where T: BaseObject
+    public interface IResult<T> where T: IBaseObject
     {
         HttpStatusCode HttpCode { get; }
 

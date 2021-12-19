@@ -1,6 +1,7 @@
 ﻿using Core.Api.DAO;
 using SGCServeur.Models.Bdd;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,39 +9,33 @@ namespace SGCServeur.LibrairieBdd
 {
     public class EmployeDAO : IDAO<Employe>
     {
-        private BaseTestContext context;
+        private SGCContext context;
 
-        public EmployeDAO(BaseTestContext context)
+        public EmployeDAO(SGCContext context)
         {
             this.context = context;
         }
 
         public async Task<bool> Create(Employe objet)
         {
-            var verif = context.Employes.Where(e => e.Code == objet.Code).FirstOrDefault();
-            if (verif != null)
-            {
-                return false;
-            }
-            objet.Id = Guid.NewGuid().ToByteArray();
-            objet.Nomascii = objet.Nom.ToUpper();
-            objet.Prenomascii = objet.Prenom.ToUpper();
+            objet.Id = Guid.NewGuid();
+            SetAscii(ref objet);
             await context.Employes.AddAsync(objet);
             await context.SaveChangesAsync();
             return true;
         }
 
-        public Employe Delete(string id)
+        public async Task<Employe> Read(string id)
         {
-            throw new NotImplementedException();
+            return await context.Employes.FindAsync(id);
         }
 
-        public Employe Read(string id)
+        public IList<Employe> ReadAll(int nbPerPage = 10)
         {
-            throw new NotImplementedException();
+            return context.Employes.ToList();
         }
 
-        public bool Update(Employe objet, string id)
+        public async Task<bool> Update(Employe objet, string id)
         {
             var objetData = context.Employes.Where(e => e.Id.ToString() == id).FirstOrDefault();
             if(objetData == null)
@@ -50,11 +45,31 @@ namespace SGCServeur.LibrairieBdd
             objetData.Nom = objet.Nom;
             objetData.Prenom = objet.Prenom;
             objetData.Mail = objet.Mail;
-            if(objet.Employecompetences != null && !objet.Employecompetences.Equals(objetData.Employecompetences))
-            {
-                objetData.Employecompetences = objet.Employecompetences;
-            }
+            SetAscii(ref objetData);
+            //TODO Faire la gestion des emplois, competences et connaissances
             objetData.Datemaj = DateTime.UtcNow;
+            context.Employes.Update(objetData);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
+        public bool Contains(string id)
+        {
+            return context.Employes.Where(e => e.Code == id).FirstOrDefault() != null;
+        }
+
+        public async Task<Employe> Delete(string id)
+        {
+            var objet = await context.Employes.FindAsync(id);
+            context.Employes.Remove(objet);
+            await context.SaveChangesAsync();
+            return objet;
+        }
+
+        private void SetAscii(ref Employe objet)
+        {
+            objet.Nomascii = objet.Nom.ToUpper();
+            objet.Prenomascii = objet.Prenom.ToUpper();
         }
     }
 }

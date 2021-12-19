@@ -1,41 +1,46 @@
-﻿using SGCServeur.Models.Bdd;
-using System;
+﻿using Core.Api.DAO;
+using SGCServeur.Models.Bdd;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Core.Api.DAO;
 
 namespace SGCServeur.LibrairieBdd
 {
-    public class CompteDAO
+    public class CompteDAO : IDAO<Compte>
     {
-        public CompteDAO(BaseTestContext context)
+        public CompteDAO(SGCContext context)
         {
-            
+
         }
 
-        public bool Create(Compte compte)
+        public bool Contains(string id)
         {
-            throw new NotImplementedException("Not Implemented Yet !");
+            throw new System.NotImplementedException();
         }
 
-        public bool Update(Compte compte)
+        public Task<bool> Create(Compte objet)
         {
-            throw new NotImplementedException("Not Implemented Yet !");
+            throw new System.NotImplementedException();
         }
 
-        public Compte Read(string id)
+        public Task<Compte> Delete(string id)
         {
-            throw new NotImplementedException("Not Implemented Yet !");
+            throw new System.NotImplementedException();
         }
 
-        public bool Contains(string id, out Compte result)
+        public Task<Compte> Read(string id)
         {
-            throw new NotImplementedException("Not Implemented Yet !");
+            throw new System.NotImplementedException();
         }
 
-        public bool Contains(string code)
+        public IList<Compte> ReadAll(int nbPerPage = 10)
         {
-            throw new NotImplementedException("Not Implemented Yet !");
+            throw new System.NotImplementedException();
+        }
+
+        public Task<bool> Update(Compte objet, string id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace SGCServeur
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BaseTestContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SGCContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers();
             services.AddOpenApiDocument(document =>

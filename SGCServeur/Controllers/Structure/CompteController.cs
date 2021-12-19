@@ -16,7 +16,7 @@ namespace SGCServeur.Controllers.Structure
     {
         private readonly CompteDAO dao;
 
-        public CompteController(BaseTestContext context)
+        public CompteController(SGCContext context)
         {
             dao = new CompteDAO(context);
         }
@@ -29,15 +29,7 @@ namespace SGCServeur.Controllers.Structure
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "The account was updated with success")]
         public async Task<ActionResult<bool>> Update([Description("Datas to update")][FromBody] Compte compte, [Description("Account's Id")][FromRoute] string id)
         {
-            if (string.IsNullOrWhiteSpace(id) || compte is null)
-            {
-                return BadRequest();
-            }
-            else if (!dao.Contains(id, out Compte result))
-            {
-                return NotFound();
-            }
-            return dao.Update(compte);
+            return null;
         }
 
         [HttpPost, Route("create")]
@@ -46,18 +38,24 @@ namespace SGCServeur.Controllers.Structure
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "The account was created with success")]
         public async Task<ActionResult<bool>> Create([FromBody] Compte compte)
         {
-            if (dao.Contains(compte.Employe.Code))
+            if (dao.Contains(compte.Code))
             {
-                return Conflict();
+                return Conflict("An account with the same code already exists");
             }
-            return dao.Create(compte);
+            return await dao.Create(compte);
         }
 
-        [HttpDelete]
-        [Route("delete/{id}")]
-        public async Task<ActionResult<Compte>> Delete([FromRoute] string id)
+        [HttpDelete, Route("delete/{id}")]
+        [Description("Delete an account from the database")]
+        [SwaggerResponse(HttpStatusCode.NotFound, typeof(NotFoundResult), Description = "The account to delete wasn't found")]
+        [SwaggerResponse(HttpStatusCode.OK, typeof(Compte), Description = "The account deleted in the database")]
+        public async Task<ActionResult<Compte>> Delete([FromRoute][Description("Id of the account to delete")] string id)
         {
-            throw new NotImplementedException();
+            if (!dao.Contains(id))
+            {
+                return NotFound("The employe to delete wasn't found");
+            }
+            return await dao.Delete(id);
         }
     }
 }

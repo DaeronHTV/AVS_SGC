@@ -6,10 +6,10 @@ namespace SGCServeur.Models.Bdd
 {
     public partial class Employeconnaissance
     {
-        public byte[] Id { get; set; }
-        public byte[] Connaissanceid { get; set; }
-        public byte[] Employeid { get; set; }
-        public byte[] Niveau { get; set; }
+        public Guid Id { get; set; }
+        public Guid Connaissanceid { get; set; }
+        public Guid Employeid { get; set; }
+        public string Niveau { get; set; }
         public DateTime Dateacquisition { get; set; }
 
         public virtual Connaissance Connaissance { get; set; }

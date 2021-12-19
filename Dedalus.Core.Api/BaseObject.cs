@@ -13,9 +13,9 @@ namespace Core.Api
            
         }
 
-        public byte[] Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Code { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime Dateinsertion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime Datemaj { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime? Datemaj { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

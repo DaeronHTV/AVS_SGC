@@ -12,9 +12,9 @@ namespace SGCServeur.Controllers
     [OpenApiTag("Api", Description = "Information about the server")]
     public class ApiController : ControllerBase
     {
-        private BaseTestContext context;
+        private SGCContext context;
 
-        public ApiController(BaseTestContext context)
+        public ApiController(SGCContext context)
         {
             this.context = context;
         }

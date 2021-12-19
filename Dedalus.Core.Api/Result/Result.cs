@@ -4,7 +4,7 @@ using System.Net;
 
 namespace Core.Api.Result
 {
-    public class Result<T> : ActionResult, IResult<T> where T : BaseObject
+    public class Result<T> : ActionResult, IResult<T> where T : IBaseObject
     {
         public Result()
         {

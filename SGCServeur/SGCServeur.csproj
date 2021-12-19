@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Version\**" />
+    <Content Remove="Models\Version\**" />
+    <EmbeddedResource Remove="Models\Version\**" />
+    <None Remove="Models\Version\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
@@ -22,8 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Results\" />
-    <Folder Include="Models\Version\" />
-    <Folder Include="Models\Version\V1\" />
   </ItemGroup>
 
   <ItemGroup>

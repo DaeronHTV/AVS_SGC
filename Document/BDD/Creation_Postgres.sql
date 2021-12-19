@@ -1,214 +1,6 @@
 drop table public.EMPLOYE;
 
 --Version 1.0
-create table public.EMPLOYE (
-	ID uuid not null,
-	CODE varchar(3) not null,
-	PRENOM varchar(50) null,
-	NOM varchar(50) null,
-	PRENOMASCII varchar(50) null,
-	NOMASCII varchar(50) null,
-	PHOTO bytea null,
-	TELEPHONE int null,
-	MAIL varchar(50) not null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_EMPLOYE primary key (ID),
-	constraint UK_MAIL_EMPLOYE unique (MAIL),
-	constraint UK_CODE_EMPLOYE unique (CODE)
-);
-
-create table public.COMPETENCE(
-	ID uuid not null,
-	CODE varchar(10) not null,
-	LIBELLE varchar(100) not null,
-	DESCRIPTION varchar(500) null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_COMPETENCE primary key (ID),
-	constraint UK_CODE_COMPETENCE unique (CODE)
-);
-
-create table public.EMPLOI(
-	ID uuid not null,
-	CODE varchar(10) not null,
-	LIBELLE varchar(100) not null,
-	DESCRIPTION varchar(500) null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_EMPLOI primary key (ID),
-	constraint UK_CODE_EMPLOI unique (CODE)
-);
-
-create table public.COMPTE(
-	ID uuid not null,
-	EMPLOYEID uuid not null,
-	MAIL varchar(50) not null,
-	PASSWORD varchar(50) not null,
-	TYPECOMPTE varchar(30) default 'MEMBRE',
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_COMPTE primary key (ID),
-	constraint FK_EMPLOYE_COMPTE foreign key (EMPLOYEID) references EMPLOYE(ID),
-	constraint C1_TYPECOMPTE check (TYPECOMPTE in ('MEMBRE', 'ADMINISTRATEUR', 'MANAGER'))
-);
-
-create table public.SERVICE(
-	ID uuid not null,
-	CODE varchar(10) not null,
-	LIBELLE varchar(50) not null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_PERSONNEL primary key (ID),
-	constraint UK_CODE_SERVICE unique (CODE)
-);
-
-create table public.CONNAISSANCE(
-	ID uuid not null,
-	CODE varchar(10) not null,
-	LIBELLE varchar(100) not null,
-	DESCRIPTION varchar(500) not null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	constraint PK_CONNAISSANCE primary key (ID),
-	constraint UK_CODE_CONNAISSANCE unique (CODE)
-);
-
-create table public.EMPLOISERVICE(
-	EMPLOIID uuid not null,
-	SERVICEID uuid not null,
-	DATEDEBUT timestamp default current_timestamp,
-	DATEFIN timestamp null,
-	constraint FK_EMPLOI_EMPLOISERVICE foreign key (EMPLOIID) references EMPLOI(ID),
-	constraint FK_SERVICE_EMPLOISERVICE foreign key (SERVICEID) references SERVICE(ID)
-);
-
-create table public.EMPLOYEEMPLOI(
-	EMPLOYEID uuid not null,
-	EMPLOIID uuid not null,
-	DATEDEBUT timestamp default current_timestamp,
-	DATEFIN timestamp null,
-	constraint FK_EMPLOYE_EMPLOYEEMPLOI foreign key (EMPLOYEID) references EMPLOYE(ID),
-	constraint FK_EMPLOI_EMPLOYEEMPLOI foreign key (EMPLOIID) references EMPLOI(ID)
-);
-
-create table public.EMPLOYECOMPETENCE(
-	COMPETENCEID uuid not null,
-	EMPLOYEID uuid not null,
-	NIVEAU int default 0,
-	DATEACQUISITION timestamp null,
-	constraint FK_COMPETENCE_EMPLOYECOMPETENCE foreign key (COMPETENCEID) references COMPETENCE(ID),
-	constraint FK_EMPLOYE_EMPLOYECOMPETENCE foreign key (EMPLOYEID) references EMPLOYE(ID),
-	constraint C3_NIVEAU check (NIVEAU between 0 and 5)
-);
-
-create table public.EMPLOICOMPETENCE(
-	COMPETENCEID uuid not null,
-	EMPLOIID uuid not null,
-	DATEDEBUT timestamp default current_timestamp,
-	DATEFIN timestamp null,
-	constraint FK_EMPLOI_EMPLOICOMPETENCE foreign key (EMPLOIID) references EMPLOI(ID),
-	constraint FK_COMPETENCE_EMPLOICOMPETENCE foreign key (COMPETENCEID) references COMPETENCE(ID)
-);
-
-create table public.EMPLOYECONNAISSANCE(
-	CONNAISSANCEID uuid not null,
-	EMPLOYEID uuid not null,
-	NIVEAU int default 0,
-	DATEACQUISITION timestamp null,
-	constraint FK_CONNAISSANCE_EMPLOYECONNAISSANCE foreign key (CONNAISSANCEID) references CONNAISSANCE(ID),
-	constraint FK_EMPLOYE_EMPLOYECONNAISSANCE foreign key (EMPLOYEID) references EMPLOYE(ID),
-	constraint C3_NIVEAU_EMPLOYECONNAISSANCE check (NIVEAU between 0 and 5)
-);
-
-create table public.EMPLOICONNAISSANCE(
-	CONNAISSANCEID uuid not null,
-	EMPLOIID uuid not null,
-	DATEDEBUT timestamp default current_timestamp,
-	DATEFIN timestamp null,
-	constraint FK_EMPLOI_EMPLOICONNAISSANCE foreign key (EMPLOIID) references EMPLOI(ID),
-	constraint FK_CONNAISSANCE_EMPLOICONNAISSANCE foreign key (CONNAISSANCEID) references CONNAISSANCE(ID)
-);
-
-CREATE INDEX Employe_Trigramme ON EMPLOYE(CODE);
-CREATE INDEX Employe_Emploi_Date ON EMPLOYEEMPLOI(DATEDEBUT, DATEFIN);
-CREATE INDEX Employe_Competence_Niveau ON EMPLOYECOMPETENCE(NIVEAU);
-CREATE INDEX Emploi_Service_Date ON EMPLOISERVICE(DATEDEBUT, DATEFIN);
-
-/*Version 2.0*/
-alter table public.EMPLOYE 
-alter column MAIL type varchar(100);
-
---Ajout des champs DATEDEBUTVALIDITE et DATEFINVALIDITE
-alter table public.employe add column DATEDEBUTVALDITE timestamp default current_timestamp;
-alter table public.employe add column DATEFINVALIDITE timestamp default '3000-12-31';
-alter table public.compte add column DATEDEBUTVALDITE timestamp default current_timestamp;
-alter table public.compte add column DATEFINVALIDITE timestamp default '3000-12-31';
-alter table public.service add column DATEDEBUTVALDITE timestamp default current_timestamp;
-alter table public.service add column DATEFINVALIDITE timestamp default '3000-12-31';
-alter table public.emploi add column DATEDEBUTVALDITE timestamp default current_timestamp;
-alter table public.emploi add column DATEFINVALIDITE timestamp default '3000-12-31';
-
---Modification de la table employe competence
-alter table public.employecompetence drop constraint C3_NIVEAU;
-alter table public.employecompetence drop column NIVEAU;
-alter table public.employecompetence add column NIVEAU varchar(30) default 'NONE';
-alter table public.employecompetence add constraint C4_CHECK_NIVEAU 
-check (NIVEAU in ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'));
-
---Modification de la table employe connaissance
-alter table public.employeconnaissance drop constraint C3_NIVEAU_EMPLOYECONNAISSANCE;
-alter table public.employeconnaissance drop column NIVEAU;
-alter table public.employeconnaissance add column NIVEAU varchar(30) default 'NONE';
-alter table public.employeconnaissance add constraint C4_CHECK_NIVEAU 
-check (NIVEAU in ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'));
-
---Creation des nouvelles tables principales
-create table public.AUTEUR(
-	ID uuid not null,
-	EMPLOYEID uuid null,
-	CODE varchar(3) not null,
-	PRENOM varchar(50) null,
-	NOM varchar(50) null,
-	PRENOMASCII varchar(50) null,
-	NOMASCII varchar(50) null,
-	MAIL varchar(100) not null,
-	DATEINSERTION timestamp default current_timestamp,
-	DATEMAJ timestamp null,
-	DATEDEBUTVALIDITE timestamp default current_timestamp,
-	DATEFINVALIDITE timestamp default '3000-12-31',
-	constraint PK_AUTEUR primary key (ID),
-	constraint UK_CODE_AUTEUR unique (CODE),
-	constraint UK_MAIL_AUTEUR unique (MAIL)
-);
-
-create table public.FORMATION(
-	ID uuid not null,
-	CODE varchar(20) not null,
-	LIBELLE varchar(100) not null,
-	DESCRIPTION varchar(500) null,
-	TAGS varchar(1000) null,
-	NIVEAU varchar(30) not null default 'INITIE',
-	constraint PK_FORMATION primary key (ID),
-	constraint UK_CODE_FORMATION unique (CODE),
-	constraint C5_NIVEAU_FORMATION check (NIVEAU in ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'))
-);
-
-create table public.CONTENUE(
-	ID uuid not null,
-	
-	constraint PK_CONTENUE primary key (ID)
-);
-
---Creation des nouvelles tables relationnelles
-create table public.FORMATIONCONTENUE(
-	
-);
-
-create table public.FORMATIONEMPLOYE(
-
-);
-
 CREATE TABLE public.PARAMETRES(
 	ID uuid NOT NULL,
 	CODE varchar(20) NOT NULL,
@@ -218,8 +10,262 @@ CREATE TABLE public.PARAMETRES(
 	CONSTRAINT UK_CODE_PARAMETRES UNIQUE (CODE)
 );
 
---Creation des INDEX
---INDEX POUR RECHERCHER UNE FORMATION AVEC LE TUPLE (TAG,NIVEAU)
---INDEX POUR RECHERCHER
+CREATE TABLE public.EMPLOYE (
+	ID uuid NOT NULL,
+	CODE VARCHAR(4) NOT NULL,
+	PRENOM VARCHAR(50) NULL,
+	NOM VARCHAR(50) NOT NULL,
+	PRENOMASCII VARCHAR(50) NULL,
+	NOMASCII VARCHAR(50) NULL,
+	PHOTO bytea NULL,
+	TELEPHONE VARCHAR(10) NULL,
+	MAIL VARCHAR(100) NOT NULL,
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_EMPLOYE PRIMARY KEY (ID),
+	CONSTRAINT UK_MAIL_EMPLOYE UNIQUE (MAIL),
+	CONSTRAINT UK_CODE_EMPLOYE UNIQUE (CODE)
+);
 
+CREATE TABLE public.COMPETENCE(
+	ID uuid NOT NULL,
+	CODE VARCHAR(10) NOT NULL,
+	LIBELLE VARCHAR(100) NOT NULL,
+	DESCRIPTION VARCHAR(500) NULL,
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_COMPETENCE PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_COMPETENCE UNIQUE (CODE)
+);
 
+create table public.EMPLOI(
+	ID uuid NOT NULL,
+	CODE VARCHAR(10) NOT NULL,
+	LIBELLE VARCHAR(100) NOT NULL,
+	DESCRIPTION varchar(500) NULL,
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_EMPLOI PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_EMPLOI UNIQUE (CODE)
+);
+
+create table public.COMPTE(
+	ID uuid NOT NULL,
+	EMPLOYEID uuid NOT NULL,
+	CODE VARCHAR(4) NOT NULL,
+	MAIL VARCHAR(50) NOT NULL,
+	PASSWORD VARCHAR(50) NOT NULL,
+	TYPECOMPTE VARCHAR(30) DEFAULT 'MEMBRE',
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_COMPTE PRIMARY KEY (ID),
+	CONSTRAINT FK_EMPLOYE_COMPTE FOREIGN KEY (EMPLOYEID) REFERENCES EMPLOYE(ID),
+	CONSTRAINT C1_TYPECOMPTE CHECK (TYPECOMPTE IN ('MEMBRE', 'ADMINISTRATEUR', 'MANAGER'))
+);
+
+create table public.SERVICE(
+	ID uuid not null,
+	CODE varchar(10) not null,
+	LIBELLE varchar(50) not null,
+	DATEINSERTION timestamp default current_timestamp,
+	DATEMAJ timestamp null,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	constraint PK_PERSONNEL primary key (ID),
+	constraint UK_CODE_SERVICE unique (CODE)
+);
+
+CREATE TABLE public.CONNAISSANCE(
+	ID uuid NOT NULL,
+	CODE varchar(10) NOT NULL,
+	LIBELLE varchar(100) NOT NULL,
+	DESCRIPTION varchar(500) NOT NULL,
+	DATEINSERTION timestamp DEFAULT current_timestamp,
+	DATEMAJ timestamp NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_CONNAISSANCE PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_CONNAISSANCE UNIQUE (CODE)
+);
+
+CREATE TABLE public.GROUPS(
+	ID uuid NOT NULL,
+	CODE VARCHAR(50) NOT NULL,
+	DESCRIPTION VARCHAR(500) NULL,
+	DATEINSERTION timestamp DEFAULT current_timestamp,
+	DATEMAJ timestamp NULL,
+	DATEDEBUTVALDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALDITE TIMESTAMP NULL DEFAULT '3000-12-31',
+	CONSTRAINT PK_GROUPS PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_GROUPS UNIQUE (CODE)
+);
+
+CREATE TABLE public.AUTEUR(
+	ID uuid NOT NULL,
+	COMPTEID uuid NULL,
+	PRENOM VARCHAR(50) NULL,
+	NOM VARCHAR(50) NULL,
+	PRENOMASCII VARCHAR(50) NULL,
+	NOMASCII VARCHAR(50) NULL,
+	MAIL VARCHAR(100) NOT NULL,
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALIDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALIDITE TIMESTAMP DEFAULT '3000-12-31',
+	CONSTRAINT PK_AUTEUR PRIMARY KEY (ID),
+	CONSTRAINT UK_MAIL_AUTEUR UNIQUE (MAIL),
+	CONSTRAINT FK_COMPTE_AUTEUR FOREIGN KEY (COMPTEID) REFERENCES COMPTE(ID)
+);
+
+CREATE TABLE public.FORMATION(
+	ID uuid NOT NULL,
+	CODE VARCHAR(20) NOT NULL,
+	LIBELLE VARCHAR(100) NOT NULL,
+	DESCRIPTION VARCHAR(500) NULL,
+	TAGS VARCHAR(1000) NULL,
+	NIVEAU VARCHAR(30) NOT NULL DEFAULT 'INITIE',
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALIDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALIDITE TIMESTAMP DEFAULT '3000-12-31',
+	CONSTRAINT PK_FORMATION PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_FORMATION UNIQUE (CODE),
+	CONSTRAINT C5_NIVEAU_FORMATION CHECK (NIVEAU IN ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'))
+);
+
+CREATE TABLE public.TAG(
+	ID uuid NOT NULL,
+	CODE VARCHAR(50) NOT NULL,
+	DESCRIPTION VARCHAR(100) NULL,
+	COLOR VARCHAR(50) DEFAULT '#FFFFF',
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALIDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALIDITE TIMESTAMP DEFAULT '3000-12-31',
+	CONSTRAINT PK_TAG PRIMARY KEY (ID),
+	CONSTRAINT UK_CODE_TAG UNIQUE (CODE)
+);
+
+CREATE TABLE public.CONTENUE(
+	ID uuid NOT NULL,
+	DATEINSERTION TIMESTAMP DEFAULT current_timestamp,
+	DATEMAJ TIMESTAMP NULL,
+	DATEDEBUTVALIDITE TIMESTAMP DEFAULT current_timestamp,
+	DATEFINVALIDITE TIMESTAMP DEFAULT '3000-12-31',
+	CONSTRAINT PK_CONTENUE PRIMARY KEY (ID)
+);
+
+--TABLE RELATIONNELLE
+CREATE TABLE public.FORMATIONTAG(
+	ID uuid NOT NULL,
+	TAGID uuid NOT NULL,
+	FORMATIONID uuid NOT NULL,
+	DATEDEBUT timestamp default current_timestamp,
+	DATEFIN timestamp null,
+	CONSTRAINT PK_FORMATIONTAG PRIMARY KEY (ID),
+	CONSTRAINT FK_TAG_FORMATIONTAG FOREIGN KEY (TAGID) references TAG(ID),
+	CONSTRAINT FK_FORMATION_FORMATIONTAG FOREIGN KEY (FORMATIONID) references FORMATION(ID)
+);
+
+CREATE TABLE public.GROUPEMPLOYE(
+	ID uuid NOT NULL,
+	EMPLOYEID uuid NOT NULL,
+	GROUPID uuid NOT NULL,
+	DATEDEBUT timestamp DEFAULT current_timestamp,
+	DATEFIN timestamp NULL,
+	CONSTRAINT PK_GROUPEMPLOYE PRIMARY KEY (ID),
+	CONSTRAINT FK_EMPLOYE_GROUPEMPLOYE foreign key (EMPLOYEID) references EMPLOYE(ID),
+	CONSTRAINT FK_GROUP_GROUPEMPLOYE foreign key (GROUPID) references GROUPS(ID)
+);
+
+/*CREATE TABLE public.GROUPFORMATION(
+	ID uuid NOT NULL,
+	FORMATIONID uuid NOT NULL,
+	GROUPID uuid NOT NULL,
+	DATEDEBUT timestamp DEFAULT current_timestamp,
+	DATEFIN timestamp NULL,
+	CONSTRAINT PK_GROUPFORMATION PRIMARY KEY (ID),
+	CONSTRAINT FK_FORMATION_GROUPFORMATION foreign key (FORMATIONID) references FORMATION(ID),
+	CONSTRAINT FK_GROUP_GROUPFORMATION foreign key (GROUPID) references GROUPS(ID)
+);*/
+
+create table public.EMPLOISERVICE(
+	ID uuid NOT NULL,
+	EMPLOIID uuid not null,
+	SERVICEID uuid not null,
+	DATEDEBUT timestamp default current_timestamp,
+	DATEFIN timestamp null,
+	CONSTRAINT PK_EMPLOISERVICE PRIMARY KEY (ID),
+	constraint FK_EMPLOI_EMPLOISERVICE foreign key (EMPLOIID) references EMPLOI(ID),
+	constraint FK_SERVICE_EMPLOISERVICE foreign key (SERVICEID) references SERVICE(ID)
+);
+
+create table public.EMPLOYEEMPLOI(
+	ID uuid NOT NULL,
+	EMPLOYEID uuid not null,
+	EMPLOIID uuid not null,
+	DATEDEBUT timestamp default current_timestamp,
+	DATEFIN timestamp null,
+	CONSTRAINT PK_EMPLOYEEMPLOI PRIMARY KEY (ID),
+	constraint FK_EMPLOYE_EMPLOYEEMPLOI foreign key (EMPLOYEID) references EMPLOYE(ID),
+	constraint FK_EMPLOI_EMPLOYEEMPLOI foreign key (EMPLOIID) references EMPLOI(ID)
+);
+
+create table public.EMPLOYECOMPETENCE(
+	ID uuid NOT NULL,
+	COMPETENCEID uuid NOT NULL,
+	EMPLOYEID uuid NOT NULL,
+	NIVEAU VARCHAR(30) DEFAULT 'NONE',
+	DATEACQUISITION TIMESTAMP NULL,
+	CONSTRAINT PK_EMPLOYECOMPETENCE PRIMARY KEY (ID),
+	CONSTRAINT FK_COMPETENCE_EMPLOYECOMPETENCE FOREIGN KEY (COMPETENCEID) REFERENCES COMPETENCE(ID),
+	CONSTRAINT FK_EMPLOYE_EMPLOYECOMPETENCE FOREIGN KEY (EMPLOYEID) REFERENCES EMPLOYE(ID),
+	CONSTRAINT C3_NIVEAU CHECK (NIVEAU IN ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'))
+);
+
+create table public.EMPLOICOMPETENCE(
+	ID uuid NOT NULL,
+	COMPETENCEID uuid NOT NULL,
+	EMPLOIID uuid NOT NULL,
+	DATEDEBUT TIMESTAMP DEFAULT current_timestamp,
+	DATEFIN TIMESTAMP NULL,
+	CONSTRAINT PK_EMPLOICOMPETENCE PRIMARY KEY (ID),
+	CONSTRAINT FK_EMPLOI_EMPLOICOMPETENCE FOREIGN KEY (EMPLOIID) REFERENCES EMPLOI(ID),
+	CONSTRAINT FK_COMPETENCE_EMPLOICOMPETENCE FOREIGN KEY (COMPETENCEID) REFERENCES COMPETENCE(ID)
+);
+
+create table public.EMPLOYECONNAISSANCE(
+	ID uuid NOT NULL,
+	CONNAISSANCEID uuid NOT NULL,
+	EMPLOYEID uuid NOT NULL,
+	NIVEAU VARCHAR(30) DEFAULT 'NONE',
+	DATEACQUISITION TIMESTAMP NULL,
+	CONSTRAINT PK_EMPLOYECONNAISSANCE PRIMARY KEY (ID),
+	CONSTRAINT FK_CONNAISSANCE_EMPLOYECONNAISSANCE FOREIGN KEY (CONNAISSANCEID) REFERENCES CONNAISSANCE(ID),
+	CONSTRAINT FK_EMPLOYE_EMPLOYECONNAISSANCE FOREIGN KEY (EMPLOYEID) REFERENCES EMPLOYE(ID),
+	CONSTRAINT C3_NIVEAU_EMPLOYECONNAISSANCE CHECK (NIVEAU IN ('NONE', 'INITIE', 'DEBUTANT', 'INTERMEDIAIRE', 'CONFIRME', 'EXPERT'))
+);
+
+create table public.EMPLOICONNAISSANCE(
+	ID uuid NOT NULL,
+	CONNAISSANCEID uuid NOT NULL,
+	EMPLOIID uuid NOT NULL,
+	DATEDEBUT TIMESTAMP DEFAULT current_timestamp,
+	DATEFIN TIMESTAMP NULL,
+	CONSTRAINT PK_EMPLOICONNAISSANCE PRIMARY KEY (ID),
+	CONSTRAINT FK_EMPLOI_EMPLOICONNAISSANCE FOREIGN KEY (EMPLOIID) REFERENCES EMPLOI(ID),
+	CONSTRAINT FK_CONNAISSANCE_EMPLOICONNAISSANCE FOREIGN KEY (CONNAISSANCEID) REFERENCES CONNAISSANCE(ID)
+);
+
+CREATE INDEX Employe_Trigramme ON EMPLOYE(CODE);
+CREATE INDEX Employe_Emploi_Date ON EMPLOYEEMPLOI(DATEDEBUT, DATEFIN);
+CREATE INDEX Employe_Competence_Niveau ON EMPLOYECOMPETENCE(NIVEAU);
+CREATE INDEX Emploi_Service_Date ON EMPLOISERVICE(DATEDEBUT, DATEFIN);

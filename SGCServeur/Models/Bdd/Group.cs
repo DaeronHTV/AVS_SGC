@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core.Api;
 
 #nullable disable
 
 namespace SGCServeur.Models.Bdd
 {
-    public partial class Service: IBaseObject
+    public partial class Group
     {
-        public Service()
+        public Group()
         {
-            Emploiservices = new HashSet<Emploiservice>();
+            Groupemployes = new HashSet<Groupemploye>();
         }
 
         public Guid Id { get; set; }
         public string Code { get; set; }
-        public string Libelle { get; set; }
+        public string Description { get; set; }
         public DateTime Dateinsertion { get; set; }
         public DateTime? Datemaj { get; set; }
         public DateTime Datedebutvaldite { get; set; }
         public DateTime? Datefinvaldite { get; set; }
 
-        public virtual ICollection<Emploiservice> Emploiservices { get; set; }
+        public virtual ICollection<Groupemploye> Groupemployes { get; set; }
     }
 }
