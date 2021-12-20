@@ -5,43 +5,43 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core.Api.DAO
 {
-    public class CommonDAO<T> : IDAO<T> where T : IBaseObject
+    public abstract class CommonDAO<T> : IDAO<T> where T : IBaseObject
     {
-        private readonly DbContext context;
+        protected readonly DbContext context;
 
         public CommonDAO(DbContext context)
         {
             this.context = context;
         }
 
-        public bool Contains(string id)
+        public virtual async Task<bool> Create(T objet)
         {
-            throw new NotImplementedException();
+            objet.Id = Guid.NewGuid();
+            objet.Dateinsertion = DateTime.UtcNow;
+            await context.AddAsync(objet);
+            return true;
         }
 
-        public Task<bool> Create(T objet)
+        public virtual async Task<T> Read(Guid id)
         {
-            throw new NotImplementedException();
+            return (T)await context.FindAsync(typeof(T), id);
         }
 
-        public Task<T> Delete(string id)
+        public virtual async Task<T> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var objet = (T)await context.FindAsync(typeof(T), id);
+            context.Remove(objet);
+            await context.SaveChangesAsync();
+            return objet;
         }
 
-        public Task<T> Read(string id)
+        public async virtual Task<bool> Contains(Guid id)
         {
-            throw new NotImplementedException();
+            return (await context.FindAsync(typeof(T), id)) != null;
         }
 
-        public IList<T> ReadAll(int nbPerPage = 10)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Task<bool> Update(T objet, Guid id);
 
-        public Task<bool> Update(T objet, string id)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract IList<T> ReadAll(int nbPerPage = 10);
     }
 }

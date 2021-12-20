@@ -3,6 +3,7 @@ using SGCServeur.Models.Bdd;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Api.DAO;
+using System;
 
 namespace SGCServeur.LibrairieBdd
 {
@@ -13,9 +14,9 @@ namespace SGCServeur.LibrairieBdd
 
         }
 
-        public bool Contains(string id)
+        public Task<bool> Contains(Guid id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<bool> Create(Compte objet)
@@ -23,24 +24,24 @@ namespace SGCServeur.LibrairieBdd
             throw new System.NotImplementedException();
         }
 
-        public Task<Compte> Delete(string id)
+        public Task<Compte> Delete(Guid id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Compte> Read(string id)
+        public Task<Compte> Read(Guid id)
         {
             throw new System.NotImplementedException();
         }
 
         public IList<Compte> ReadAll(int nbPerPage = 10)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public Task<bool> Update(Compte objet, string id)
+        public Task<bool> Update(Compte objet, Guid id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

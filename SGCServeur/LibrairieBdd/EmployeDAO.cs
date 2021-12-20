@@ -7,40 +7,33 @@ using System.Threading.Tasks;
 
 namespace SGCServeur.LibrairieBdd
 {
-    public class EmployeDAO : IDAO<Employe>
+    public class EmployeDAO : CommonDAO<Employe>
     {
-        private SGCContext context;
+        private SGCContext _context;
 
-        public EmployeDAO(SGCContext context)
+        public EmployeDAO(SGCContext context) : base(context)
         {
-            this.context = context;
+            this._context = context;
         }
 
-        public async Task<bool> Create(Employe objet)
+        public override async Task<bool> Create(Employe objet)
         {
-            objet.Id = Guid.NewGuid();
+            await base.Create(objet);
             SetAscii(ref objet);
-            await context.Employes.AddAsync(objet);
             await context.SaveChangesAsync();
             return true;
         }
 
-        public async Task<Employe> Read(string id)
+        public override async Task<bool> Update(Employe objet, Guid id)
         {
-            return await context.Employes.FindAsync(id);
-        }
-
-        public IList<Employe> ReadAll(int nbPerPage = 10)
-        {
-            return context.Employes.ToList();
-        }
-
-        public async Task<bool> Update(Employe objet, string id)
-        {
-            var objetData = context.Employes.Where(e => e.Id.ToString() == id).FirstOrDefault();
-            if(objetData == null)
+            Employe objetData;
+            if (!(await Contains(id)))
             {
-                //TODO
+                objetData = new Employe();
+            }
+            else
+            {
+                objetData = await Read(id);
             }
             objetData.Nom = objet.Nom;
             objetData.Prenom = objet.Prenom;
@@ -48,22 +41,17 @@ namespace SGCServeur.LibrairieBdd
             SetAscii(ref objetData);
             //TODO Faire la gestion des emplois, competences et connaissances
             objetData.Datemaj = DateTime.UtcNow;
-            context.Employes.Update(objetData);
+            _context.Employes.Update(objetData);
             await context.SaveChangesAsync();
             return true;
         }
 
-        public bool Contains(string id)
-        {
-            return context.Employes.Where(e => e.Code == id).FirstOrDefault() != null;
-        }
 
-        public async Task<Employe> Delete(string id)
+
+
+        public override IList<Employe> ReadAll(int nbPerPage = 10)
         {
-            var objet = await context.Employes.FindAsync(id);
-            context.Employes.Remove(objet);
-            await context.SaveChangesAsync();
-            return objet;
+            return _context.Employes.ToList();
         }
 
         private void SetAscii(ref Employe objet)

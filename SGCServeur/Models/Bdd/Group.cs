@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Core.Api;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
 
 namespace SGCServeur.Models.Bdd
 {
-    public partial class Group
+    public partial class Group: IBaseObject
     {
         public Group()
         {

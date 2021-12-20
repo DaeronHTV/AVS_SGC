@@ -38,7 +38,7 @@ namespace SGCServeur.Controllers.Structure
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "The account was created with success")]
         public async Task<ActionResult<bool>> Create([FromBody] Compte compte)
         {
-            if (dao.Contains(compte.Code))
+            if (await dao.Contains(compte.Id))
             {
                 return Conflict("An account with the same code already exists");
             }
@@ -49,12 +49,12 @@ namespace SGCServeur.Controllers.Structure
         [Description("Delete an account from the database")]
         [SwaggerResponse(HttpStatusCode.NotFound, typeof(NotFoundResult), Description = "The account to delete wasn't found")]
         [SwaggerResponse(HttpStatusCode.OK, typeof(Compte), Description = "The account deleted in the database")]
-        public async Task<ActionResult<Compte>> Delete([FromRoute][Description("Id of the account to delete")] string id)
+        public async Task<ActionResult<Compte>> Delete([FromRoute][Description("Id of the account to delete")] Guid id)
         {
-            if (!dao.Contains(id))
+            /*if (!dao.Contains(id))
             {
                 return NotFound("The employe to delete wasn't found");
-            }
+            }*/
             return await dao.Delete(id);
         }
     }

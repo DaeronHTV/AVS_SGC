@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Api.Controller
 {
-    public interface IObjectController<T> where T: BaseObject
+    public interface IObjectController<T> where T: IBaseObject
     {
 
         Task<ActionResult<bool>> Update([FromBody] T objet, [FromRoute] string id);

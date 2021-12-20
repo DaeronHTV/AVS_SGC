@@ -1,8 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Core.Api.DAO
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IDAO<T> where T: IBaseObject
     {
         /// <summary>
@@ -17,7 +22,7 @@ namespace Core.Api.DAO
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> Delete(string id);
+        Task<T> Delete(Guid id);
 
         /// <summary>
         /// 
@@ -25,21 +30,21 @@ namespace Core.Api.DAO
         /// <param name="objet"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<bool> Update(T objet, string id);
+        Task<bool> Update(T objet, Guid id);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> Read(string id);
+        Task<T> Read(Guid id);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        bool Contains(string id);
+        Task<bool> Contains(Guid id);
 
         /// <summary>
         /// 

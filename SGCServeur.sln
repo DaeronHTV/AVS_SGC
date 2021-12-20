@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGCServeur", "SGCServeur\SGCServeur.csproj", "{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Api", "Dedalus.Core.Api\Core.Api.csproj", "{EC6656D2-1181-4971-BA80-7A0E40C5432C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Api", "Dedalus.Core.Api\Core.Api.csproj", "{EC6656D2-1181-4971-BA80-7A0E40C5432C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
