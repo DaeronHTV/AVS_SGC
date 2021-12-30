@@ -8,31 +8,9 @@ namespace SGCServeur.Config
 
         public string Serveur { get; set; }
 
-        public string Mail
-        {
-            get
-            {
-                return DecodingBase64(Mail);
-            }
+        public string Mail { get; set; }
 
-            set
-            {
-                Mail = value;
-            }
-        }
-
-        public string Password
-        {
-            get
-            {
-                return DecodingBase64(Password);
-            }
-
-            set
-            {
-                Password = value;
-            }
-        }
+        public string Password { get; set; }
 
         private string DecodingBase64(string textToDecode, System.Text.Encoding encodage = null)
         {

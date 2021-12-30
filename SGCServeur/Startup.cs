@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
@@ -20,9 +19,10 @@ namespace SGCServeur
 
         public Startup(IConfiguration configuration)
         {
+            ConfigHelper.Initialisation(configuration);
             Configuration = configuration;
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            ApiInformation = Configuration.GetSection(nameof(ApiInformation)).Get<ApiInformation>();
+            ApiInformation = configuration.GetSection(nameof(ApiInformation)).Get<ApiInformation>();
         }
 
         public IConfiguration Configuration { get; }
