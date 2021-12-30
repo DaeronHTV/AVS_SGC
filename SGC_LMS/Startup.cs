@@ -1,34 +1,30 @@
+using Core.Api.Config;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
-using SGCServeur.Config;
-using SGCServeur.Models.Bdd;
-using Core.Api.Config;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
-namespace SGCServeur
+namespace SGC_LMS
 {
     public class Startup
     {
-        private readonly string ConnectionString;
-        //private readonly Provider ProviderApi;
 
         public Startup(IConfiguration configuration)
         {
             ConfigHelper.Initialisation(configuration);
             Configuration = configuration;
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
         }
 
         public IConfiguration Configuration { get; }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SGCContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers();
             services.AddOpenApiDocument(document =>
@@ -45,7 +41,6 @@ namespace SGCServeur
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

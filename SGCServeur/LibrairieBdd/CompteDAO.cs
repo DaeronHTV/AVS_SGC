@@ -1,8 +1,7 @@
-﻿using Core.Api.DAO;
-using SGCServeur.Models.Bdd;
+﻿using SGCServeur.Models.Bdd;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core.Api.DAO;
+using Core.Api.Database.DAO;
 using System;
 
 namespace SGCServeur.LibrairieBdd

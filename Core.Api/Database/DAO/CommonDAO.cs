@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Core.Api.DAO
+namespace Core.Api.Database.DAO
 {
     public abstract class CommonDAO<T> : IDAO<T> where T : IBaseObject
     {

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SGCServeur.Controllers
+namespace SGC_LMS.Controllers.Formation
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FormationController : ControllerBase
+    public class ContenueController : ControllerBase
     {
     }
 }

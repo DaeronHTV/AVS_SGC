@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="DAO\" />
+    <Folder Include="Database\DAO\" />
     <Folder Include="Helper\" />
     <Folder Include="Result\" />
   </ItemGroup>
@@ -14,6 +14,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.15.5" />
   </ItemGroup>
 
 </Project>
