@@ -1,0 +1,12 @@
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.csproj.AssemblyReference.cache
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.AssemblyInfoInputs.cache
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.AssemblyInfo.cs
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.csproj.CoreCompileInputs.cache
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\bin\Debug\net5.0\Core.Api.deps.json
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\bin\Debug\net5.0\Core.Api.dll
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\bin\Debug\net5.0\ref\Core.Api.dll
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\bin\Debug\net5.0\Core.Api.pdb
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.dll
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\ref\Core.Api.dll
+D:\Mes Travaux\Repositories\sgc-m2miage\Core.Api\obj\Debug\net5.0\Core.Api.pdb
