@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Connaissances Version="1.0" DateExport="20213112">
+	<Service Indice="1" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="2" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="3" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="4" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="5" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="6" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="7" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Service Indice="8" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+</Connaissances>

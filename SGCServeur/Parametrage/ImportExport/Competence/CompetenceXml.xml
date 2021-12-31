@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Competences Version="1.0" DateExport="20213112">
+	<Competence Indice="1" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="2" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="3" Code="NBFile" Libelle="Nombre de fichiers logs" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="4" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="5" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="6" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="7" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+	<Competence Indice="8" Code="NBFile" Libelle="Nombre de fichiers logs" Description="10" DateInsertion="20213112" DateMaj="20213112"/>
+</Competences>
