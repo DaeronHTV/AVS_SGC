@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Comptes xsi:noNamespaceSchemaLocation="schema.xsd" Version="string" DateExport="string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Compte Code="string" Mail="string" TypeCompte="string" DateInsertion="string" DateMaj="string" Indice="-2779" />
+</Comptes>

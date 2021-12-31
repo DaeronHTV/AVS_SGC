@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Emplois xsi:noNamespaceSchemaLocation="schema.xsd" Version="string" DateExport="string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Emploi Indice="-2779">
+    <Code>string</Code>
+    <Libelle>string</Libelle>
+    <Description>string</Description>
+    <DateInsertion>string</DateInsertion>
+    <DateMaj>string</DateMaj>
+    <Service>
+      <Code>string</Code>
+      <Libelle>string</Libelle>
+    </Service>
+    <Competences>
+      <Competence Code="string" Libelle="string" />
+    </Competences>
+    <Connaissances>
+      <Connaissance Code="string" Libelle="string" />
+      <Connaissance Code="string" Libelle="string" />
+      <Connaissance Code="string" Libelle="string" />
+      <Connaissance Code="string" Libelle="string" />
+    </Connaissances>
+  </Emploi>
+</Emplois>

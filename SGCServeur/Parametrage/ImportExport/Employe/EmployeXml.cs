@@ -26,9 +26,9 @@ public partial class Employes {
     
     private EmployesEmploye[] employeField;
     
-    private string versionField;
+    private System.DateTime versionField;
     
-    private string dateExportField;
+    private System.DateTime dateExportField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Employe")]
@@ -43,7 +43,7 @@ public partial class Employes {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Version {
+    public System.DateTime version {
         get {
             return this.versionField;
         }
@@ -54,7 +54,7 @@ public partial class Employes {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateExport {
+    public System.DateTime dateExport {
         get {
             return this.dateExportField;
         }
@@ -78,24 +78,24 @@ public partial class EmployesEmploye {
     
     private string descriptionField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private System.DateTime dateMajField;
     
-    private EmployesEmployeCompte compteField;
+    private EmployesEmployeCompteSet compteSetField;
     
-    private EmployesEmployeCompetence[] competencesField;
+    private EmployesEmployeCompetence[] competencesSetField;
     
-    private EmployesEmployeConnaissance[] connaissancesField;
+    private EmployesEmployeConnaissance[] connaissancesSetField;
     
-    private EmployesEmployeEmploi[] emploisField;
+    private EmployesEmployeEmploi[] emploisSetField;
     
     private int indiceField;
     
     private bool indiceFieldSpecified;
     
     /// <remarks/>
-    public string Code {
+    public string code {
         get {
             return this.codeField;
         }
@@ -105,7 +105,7 @@ public partial class EmployesEmploye {
     }
     
     /// <remarks/>
-    public string Libelle {
+    public string libelle {
         get {
             return this.libelleField;
         }
@@ -115,7 +115,7 @@ public partial class EmployesEmploye {
     }
     
     /// <remarks/>
-    public string Description {
+    public string description {
         get {
             return this.descriptionField;
         }
@@ -125,7 +125,7 @@ public partial class EmployesEmploye {
     }
     
     /// <remarks/>
-    public string DateInsertion {
+    public System.DateTime dateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -135,7 +135,7 @@ public partial class EmployesEmploye {
     }
     
     /// <remarks/>
-    public string DateMaj {
+    public System.DateTime dateMaj {
         get {
             return this.dateMajField;
         }
@@ -145,45 +145,45 @@ public partial class EmployesEmploye {
     }
     
     /// <remarks/>
-    public EmployesEmployeCompte Compte {
+    public EmployesEmployeCompteSet CompteSet {
         get {
-            return this.compteField;
+            return this.compteSetField;
         }
         set {
-            this.compteField = value;
+            this.compteSetField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Competence", IsNullable=false)]
-    public EmployesEmployeCompetence[] Competences {
+    public EmployesEmployeCompetence[] CompetencesSet {
         get {
-            return this.competencesField;
+            return this.competencesSetField;
         }
         set {
-            this.competencesField = value;
+            this.competencesSetField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Connaissance", IsNullable=false)]
-    public EmployesEmployeConnaissance[] Connaissances {
+    public EmployesEmployeConnaissance[] ConnaissancesSet {
         get {
-            return this.connaissancesField;
+            return this.connaissancesSetField;
         }
         set {
-            this.connaissancesField = value;
+            this.connaissancesSetField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Emploi", IsNullable=false)]
-    public EmployesEmployeEmploi[] Emplois {
+    public EmployesEmployeEmploi[] EmploisSet {
         get {
-            return this.emploisField;
+            return this.emploisSetField;
         }
         set {
-            this.emploisField = value;
+            this.emploisSetField = value;
         }
     }
     
@@ -216,7 +216,7 @@ public partial class EmployesEmploye {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class EmployesEmployeCompte {
+public partial class EmployesEmployeCompteSet {
     
     private string codeField;
     
@@ -224,13 +224,17 @@ public partial class EmployesEmployeCompte {
     
     private string typeCompteField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
+    
+    private System.DateTime dateMajField;
+    
+    private bool dateMajFieldSpecified;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Code {
+    public string code {
         get {
             return this.codeField;
         }
@@ -241,7 +245,7 @@ public partial class EmployesEmployeCompte {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Mail {
+    public string mail {
         get {
             return this.mailField;
         }
@@ -252,7 +256,7 @@ public partial class EmployesEmployeCompte {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string TypeCompte {
+    public string typeCompte {
         get {
             return this.typeCompteField;
         }
@@ -263,7 +267,7 @@ public partial class EmployesEmployeCompte {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime dateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -273,13 +277,35 @@ public partial class EmployesEmployeCompte {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool dateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime dateMaj {
         get {
             return this.dateMajField;
         }
         set {
             this.dateMajField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool dateMajSpecified {
+        get {
+            return this.dateMajFieldSpecified;
+        }
+        set {
+            this.dateMajFieldSpecified = value;
         }
     }
 }
@@ -297,9 +323,13 @@ public partial class ConCom {
     
     private string descriptionField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
+    
+    private System.DateTime dateMajField;
+    
+    private bool dateMajFieldSpecified;
     
     private int indiceField;
     
@@ -307,7 +337,7 @@ public partial class ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Code {
+    public string code {
         get {
             return this.codeField;
         }
@@ -318,7 +348,7 @@ public partial class ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Libelle {
+    public string libelle {
         get {
             return this.libelleField;
         }
@@ -329,7 +359,7 @@ public partial class ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Description {
+    public string description {
         get {
             return this.descriptionField;
         }
@@ -340,7 +370,7 @@ public partial class ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime dateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -350,8 +380,19 @@ public partial class ConCom {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool dateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime dateMaj {
         get {
             return this.dateMajField;
         }
@@ -361,8 +402,19 @@ public partial class ConCom {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool dateMajSpecified {
+        get {
+            return this.dateMajFieldSpecified;
+        }
+        set {
+            this.dateMajFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public int Indice {
+    public int indice {
         get {
             return this.indiceField;
         }
@@ -373,7 +425,7 @@ public partial class ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool IndiceSpecified {
+    public bool indiceSpecified {
         get {
             return this.indiceFieldSpecified;
         }
@@ -393,7 +445,7 @@ public partial class EmployesEmployeCompetence : ConCom {
     
     private int niveauField;
     
-    private string dateAcquisitionField;
+    private System.DateTime dateAcquisitionField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -408,7 +460,7 @@ public partial class EmployesEmployeCompetence : ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateAcquisition {
+    public System.DateTime DateAcquisition {
         get {
             return this.dateAcquisitionField;
         }
@@ -428,11 +480,11 @@ public partial class EmployesEmployeConnaissance : ConCom {
     
     private int niveauField;
     
-    private string dateAcquisitionField;
+    private System.DateTime dateAcquisitionField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public int Niveau {
+    public int niveau {
         get {
             return this.niveauField;
         }
@@ -443,7 +495,7 @@ public partial class EmployesEmployeConnaissance : ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateAcquisition {
+    public System.DateTime dateAcquisition {
         get {
             return this.dateAcquisitionField;
         }
@@ -461,25 +513,25 @@ public partial class EmployesEmployeConnaissance : ConCom {
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 public partial class EmployesEmployeEmploi : ConCom {
     
-    private EmployesEmployeEmploiService serviceField;
+    private EmployesEmployeEmploiServiceSet serviceSetField;
     
-    private string dateDebutField;
+    private System.DateTime dateDebutField;
     
-    private string dateFinField;
+    private System.DateTime dateFinField;
     
     /// <remarks/>
-    public EmployesEmployeEmploiService Service {
+    public EmployesEmployeEmploiServiceSet ServiceSet {
         get {
-            return this.serviceField;
+            return this.serviceSetField;
         }
         set {
-            this.serviceField = value;
+            this.serviceSetField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateDebut {
+    public System.DateTime dateDebut {
         get {
             return this.dateDebutField;
         }
@@ -490,7 +542,7 @@ public partial class EmployesEmployeEmploi : ConCom {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateFin {
+    public System.DateTime dateFin {
         get {
             return this.dateFinField;
         }
@@ -506,14 +558,14 @@ public partial class EmployesEmployeEmploi : ConCom {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class EmployesEmployeEmploiService {
+public partial class EmployesEmployeEmploiServiceSet {
     
     private string codeField;
     
     private string libelleField;
     
     /// <remarks/>
-    public string Code {
+    public string code {
         get {
             return this.codeField;
         }
@@ -523,7 +575,7 @@ public partial class EmployesEmployeEmploiService {
     }
     
     /// <remarks/>
-    public string Libelle {
+    public string libelle {
         get {
             return this.libelleField;
         }

@@ -8,14 +8,14 @@
 						<xs:attribute name="Code" type="xs:string" use="required"/>
 						<xs:attribute name="Libelle" type="xs:string" use="required"/>
 						<xs:attribute name="Description" type="xs:string" use="optional"/>
-						<xs:attribute name="DateInsertion" type="xs:string" use="optional"/>
-						<xs:attribute name="DateMaj" type="xs:string" use="optional"/>
+						<xs:attribute name="DateInsertion" type="xs:dateTime" use="optional"/>
+						<xs:attribute name="DateMaj" type="xs:dateTime" use="optional"/>
 						<xs:attribute name="Indice" type="xs:int" use="optional"/>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
 			<xs:attribute name="Version" type="xs:string" use="required" />
-			<xs:attribute name="DateExport" type="xs:string" use="required" />
+			<xs:attribute name="DateExport" type="xs:dateTime" use="required" />
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

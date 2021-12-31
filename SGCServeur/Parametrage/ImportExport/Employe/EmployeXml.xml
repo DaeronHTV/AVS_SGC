@@ -1,163 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<Employes xsi:noNamespaceSchemaLocation="schema.xsd" Version="string" DateExport="string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Employe Indice="3170">
-    <Code>string</Code>
-    <Libelle>string</Libelle>
-    <Description>string</Description>
-    <DateInsertion>string</DateInsertion>
-    <DateMaj>string</DateMaj>
-    <Compte Code="string" Mail="string" TypeCompte="string" />
-    <Competences>
-      <Competence Niveau="-2718" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-329" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="2731" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-945" DateAcquisition="string" Code="string" Libelle="string" />
-    </Competences>
-    <Connaissances>
-      <Connaissance Niveau="12" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="3900" DateAcquisition="string" Code="string" Libelle="string" />
-    </Connaissances>
-    <Emplois>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-    </Emplois>
-  </Employe>
-  <Employe Indice="4701">
-    <Code>string</Code>
-    <Libelle>string</Libelle>
-    <Description>string</Description>
-    <DateInsertion>string</DateInsertion>
-    <DateMaj>string</DateMaj>
-    <Compte Code="string" Mail="string" TypeCompte="string" DateMaj="string" />
-    <Competences>
-      <Competence Niveau="-2418" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-2108" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-1924" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="4928" DateAcquisition="string" Code="string" Libelle="string" />
-    </Competences>
-    <Connaissances>
-      <Connaissance Niveau="3777" DateAcquisition="string" Code="string" Libelle="string" />
-    </Connaissances>
-    <Emplois>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-    </Emplois>
-  </Employe>
-  <Employe Indice="-1833">
-    <Code>string</Code>
-    <Libelle>string</Libelle>
-    <Description>string</Description>
-    <DateInsertion>string</DateInsertion>
-    <DateMaj>string</DateMaj>
-    <Compte Code="string" Mail="string" TypeCompte="string" DateMaj="string" />
-    <Competences>
-      <Competence Niveau="3715" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="4058" DateAcquisition="string" Code="string" Libelle="string" />
-    </Competences>
-    <Connaissances>
-      <Connaissance Niveau="-4126" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="4685" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="-766" DateAcquisition="string" Code="string" Libelle="string" />
-    </Connaissances>
-    <Emplois>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-    </Emplois>
-  </Employe>
-  <Employe Indice="1636">
-    <Code>string</Code>
-    <Libelle>string</Libelle>
-    <Description>string</Description>
-    <DateInsertion>string</DateInsertion>
-    <DateMaj>string</DateMaj>
-    <Compte Code="string" Mail="string" TypeCompte="string" DateMaj="string" />
-    <Competences>
-      <Competence Niveau="45" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-4659" DateAcquisition="string" Code="string" Libelle="string" />
-      <Competence Niveau="-4261" DateAcquisition="string" Code="string" Libelle="string" />
-    </Competences>
-    <Connaissances>
-      <Connaissance Niveau="2042" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="-2350" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="-4739" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="-4232" DateAcquisition="string" Code="string" Libelle="string" />
-      <Connaissance Niveau="1046" DateAcquisition="string" Code="string" Libelle="string" />
-    </Connaissances>
-    <Emplois>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string" />
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-      <Emploi DateDebut="string" DateFin="string" Code="string" Libelle="string">
-        <Service>
-          <Code>string</Code>
-          <Libelle>string</Libelle>
-        </Service>
-      </Emploi>
-    </Emplois>
-  </Employe>
+<Employes xsi:noNamespaceSchemaLocation="schema.xsd" version="2019-03-25T19:38:47.06" dateExport="1999-09-28T21:44:17.35" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Employe Indice="1225">
+		<code>string</code>
+		<libelle>string</libelle>
+		<description>string</description>
+		<dateInsertion>1997-10-03T21:40:45.79</dateInsertion>
+		<dateMaj>1987-06-10T15:45:38.54</dateMaj>
+		<CompteSet code="string" mail="string" typeCompte="string" dateMaj="1984-03-02T23:38:13.65" />
+		<CompetencesSet>
+			<Competence Niveau="-2678" DateAcquisition="2016-09-15T18:38:04.20" code="string" libelle="string" />
+			<Competence Niveau="4771" DateAcquisition="1994-01-13T09:07:16.39" code="string" libelle="string" />
+			<Competence Niveau="2187" DateAcquisition="1994-05-10T23:32:33.78" code="string" libelle="string" />
+		</CompetencesSet>
+		<ConnaissancesSet>
+			<Connaissance niveau="-554" dateAcquisition="1975-10-06T01:49:11.41" code="string" libelle="string" />
+			<Connaissance niveau="4181" dateAcquisition="1982-11-26T02:12:04.66" code="string" libelle="string" />
+		</ConnaissancesSet>
+		<EmploisSet>
+			<Emploi dateDebut="1988-11-27T11:43:17.55" dateFin="2004-05-26T03:00:31.82" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+			<Emploi dateDebut="1997-12-24T11:28:37.45" dateFin="1981-10-14T21:33:34.07" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+			<Emploi dateDebut="1993-10-08T12:02:59.08" dateFin="2013-05-08T10:12:00.34" code="string" libelle="string" />
+			<Emploi dateDebut="2016-07-10T11:51:16.05" dateFin="2009-03-14T08:34:55.27" code="string" libelle="string" />
+			<Emploi dateDebut="2004-04-12T13:16:25.82" dateFin="1994-05-22T01:57:19.27" code="string" libelle="string" />
+		</EmploisSet>
+	</Employe>
+	<Employe Indice="4434">
+		<code>string</code>
+		<libelle>string</libelle>
+		<description>string</description>
+		<dateInsertion>1996-08-15T22:06:20.28</dateInsertion>
+		<dateMaj>2017-11-24T12:41:51.07</dateMaj>
+		<CompteSet code="string" mail="string" typeCompte="string" dateInsertion="1993-12-18T03:24:59.96" dateMaj="2014-12-24T04:49:48.12" />
+		<CompetencesSet>
+			<Competence Niveau="4560" DateAcquisition="2000-01-22T04:16:19.09" code="string" libelle="string" />
+			<Competence Niveau="2923" DateAcquisition="2005-05-18T08:00:38.00" code="string" libelle="string" />
+			<Competence Niveau="-1525" DateAcquisition="2015-06-03T22:09:47.38" code="string" libelle="string" />
+			<Competence Niveau="194" DateAcquisition="2012-10-01T01:23:24.99" code="string" libelle="string" />
+			<Competence Niveau="-2919" DateAcquisition="1984-03-14T10:10:25.87" code="string" libelle="string" />
+		</CompetencesSet>
+		<ConnaissancesSet>
+			<Connaissance niveau="37" dateAcquisition="1987-06-06T04:47:46.36" code="string" libelle="string" />
+			<Connaissance niveau="-1132" dateAcquisition="2008-11-23T19:39:14.34" code="string" libelle="string" />
+			<Connaissance niveau="232" dateAcquisition="1985-01-12T07:23:25.08" code="string" libelle="string" />
+			<Connaissance niveau="2587" dateAcquisition="1977-07-05T11:36:00.04" code="string" libelle="string" />
+			<Connaissance niveau="4822" dateAcquisition="2017-11-05T09:33:49.25" code="string" libelle="string" />
+		</ConnaissancesSet>
+		<EmploisSet>
+			<Emploi dateDebut="1990-06-19T18:55:04.34" dateFin="2009-11-22T13:06:55.38" code="string" libelle="string" />
+			<Emploi dateDebut="1980-08-25T18:46:50.82" dateFin="2012-10-03T23:57:28.78" code="string" libelle="string" />
+			<Emploi dateDebut="2009-12-19T07:28:48.24" dateFin="1991-04-06T04:12:24.77" code="string" libelle="string" />
+		</EmploisSet>
+	</Employe>
+	<Employe Indice="2946">
+		<code>string</code>
+		<libelle>string</libelle>
+		<description>string</description>
+		<dateInsertion>2012-02-11T07:04:59.27</dateInsertion>
+		<dateMaj>2005-02-16T09:21:27.51</dateMaj>
+		<CompteSet code="string" mail="string" typeCompte="string" dateInsertion="1992-01-24T23:49:40.75" />
+		<CompetencesSet>
+			<Competence Niveau="2005" DateAcquisition="2003-10-12T07:52:53.11" code="string" libelle="string" />
+		</CompetencesSet>
+		<ConnaissancesSet>
+			<Connaissance niveau="-2126" dateAcquisition="1971-03-18T15:42:18.09" code="string" libelle="string" />
+			<Connaissance niveau="4286" dateAcquisition="1970-05-28T23:08:33.63" code="string" libelle="string" />
+		</ConnaissancesSet>
+		<EmploisSet>
+			<Emploi dateDebut="2000-08-12T21:36:57.13" dateFin="2002-09-15T09:19:33.55" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+			<Emploi dateDebut="1989-08-07T03:41:17.82" dateFin="1990-03-09T06:48:01.94" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+		</EmploisSet>
+	</Employe>
+	<Employe Indice="1849">
+		<code>string</code>
+		<libelle>string</libelle>
+		<description>string</description>
+		<dateInsertion>2007-03-06T01:47:44.36</dateInsertion>
+		<dateMaj>1999-10-16T23:20:24.73</dateMaj>
+		<CompteSet code="string" mail="string" typeCompte="string" dateInsertion="2013-01-06T02:06:26.81" dateMaj="2010-10-02T05:24:57.70" />
+		<CompetencesSet>
+			<Competence Niveau="-3432" DateAcquisition="1986-04-06T21:45:14.12" code="string" libelle="string" />
+			<Competence Niveau="1060" DateAcquisition="1986-01-19T06:40:56.58" code="string" libelle="string" />
+			<Competence Niveau="-433" DateAcquisition="1997-02-03T15:58:45.54" code="string" libelle="string" />
+			<Competence Niveau="1911" DateAcquisition="2002-05-11T14:16:46.32" code="string" libelle="string" />
+			<Competence Niveau="-3824" DateAcquisition="1991-03-05T12:48:18.33" code="string" libelle="string" />
+		</CompetencesSet>
+		<ConnaissancesSet>
+			<Connaissance niveau="3003" dateAcquisition="1974-10-16T11:22:14.00" code="string" libelle="string" />
+			<Connaissance niveau="4716" dateAcquisition="1996-04-05T13:46:31.24" code="string" libelle="string" />
+			<Connaissance niveau="-1045" dateAcquisition="2013-07-10T13:41:33.83" code="string" libelle="string" />
+			<Connaissance niveau="-393" dateAcquisition="2009-01-19T05:46:13.31" code="string" libelle="string" />
+		</ConnaissancesSet>
+		<EmploisSet>
+			<Emploi dateDebut="2011-10-26T05:01:46.35" dateFin="1999-02-02T13:45:16.06" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+			<Emploi dateDebut="1975-07-28T02:41:19.58" dateFin="2007-03-09T23:24:27.02" code="string" libelle="string" />
+			<Emploi dateDebut="2000-12-09T07:46:19.96" dateFin="2005-06-06T06:22:11.83" code="string" libelle="string">
+				<ServiceSet>
+					<code>string</code>
+					<libelle>string</libelle>
+				</ServiceSet>
+			</Emploi>
+		</EmploisSet>
+	</Employe>
 </Employes>
