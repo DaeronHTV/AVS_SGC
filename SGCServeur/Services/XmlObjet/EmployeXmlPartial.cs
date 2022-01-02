@@ -1,11 +1,14 @@
 ﻿using SGCServeur.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SGCServeur.Services
 {
     public partial class Employes : IEmployes
     {
+        private List<IEmploye> employes = null;
+
         public string Version 
         { 
             get => version;
@@ -19,9 +22,25 @@ namespace SGCServeur.Services
         }
 
         IEnumerable<IEmploye> IEmployes.Employes 
-        { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+        {
+            get
+            {
+                if(employes != null)
+                {
+                    List<IEmploye> emps = new List<IEmploye>();
+                    foreach(IEmploye _ in Employe)
+                    {
+                        emps.Add(_);
+                    }
+                }
+                return employes;
+            }
+            set
+            {
+                employes = value.ToList();
+                //this.Employe = employes.ToArray();
+                //TODO
+            } 
         }
     }
 
@@ -63,43 +82,60 @@ namespace SGCServeur.Services
                 typeCompte = TypeCompteHelper.GetStringValueFromEnum(value.TypeCompte)
             }; 
         }
+        public IEnumerable<IEmploi> Emplois 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
+
+        public IEnumerable<ICompetence> Competences 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
+
+        public IEnumerable<IConnaissance> Connaissances 
+        { 
+            get => throw new NotImplementedException(); 
+            set => throw new NotImplementedException(); 
+        }
     }
 
     public partial class EmployesEmployeCompteSet : ICompte
     {
         string ICompte.Code 
-        { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+        {
+            get => code; 
+            set => code = value; 
         }
 
         string ICompte.Mail 
         { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+            get => mail; 
+            set => mail = value; 
         }
 
         int ICompte.Indice 
         { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+            get => throw new NotImplementedException("Property doesn't exist !"); 
+            set => throw new NotImplementedException("Property doesn't exist !"); 
         }
         TypeCompteEnum ICompte.TypeCompte 
         { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+            get => TypeCompteHelper.GetValueFromString(typeCompte); 
+            set => typeCompte = TypeCompteHelper.GetStringValueFromEnum(value); 
         }
 
         DateTime ICompte.DateInsertion 
         { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+            get => dateInsertion; 
+            set => dateInsertion = value; 
         }
 
         DateTime ICompte.DateMaj 
         { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+            get => dateMaj; 
+            set => dateMaj = value; 
         }
     }
 }

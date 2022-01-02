@@ -21,5 +21,11 @@ namespace SGCServeur.Services
         DateTime DateMaj { get; set; }
 
         ICompte Compte { get; set; }
+
+        IEnumerable<IEmploi> Emplois { get; set; }
+
+        IEnumerable<ICompetence> Competences { get; set; }
+
+        IEnumerable<IConnaissance> Connaissances { get; set; }
     }
 }

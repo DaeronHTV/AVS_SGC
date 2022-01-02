@@ -22,22 +22,22 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class Comptes {
+public partial class Competences {
     
-    private ComptesCompte[] compteField;
+    private CompetencesCompetence[] competenceField;
     
     private string versionField;
     
-    private string dateExportField;
+    private System.DateTime dateExportField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Compte")]
-    public ComptesCompte[] Compte {
+    [System.Xml.Serialization.XmlElementAttribute("Competence")]
+    public CompetencesCompetence[] Competence {
         get {
-            return this.compteField;
+            return this.competenceField;
         }
         set {
-            this.compteField = value;
+            this.competenceField = value;
         }
     }
     
@@ -54,7 +54,7 @@ public partial class Comptes {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateExport {
+    public System.DateTime DateExport {
         get {
             return this.dateExportField;
         }
@@ -70,17 +70,21 @@ public partial class Comptes {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class ComptesCompte {
+public partial class CompetencesCompetence {
     
     private string codeField;
     
-    private string mailField;
+    private string libelleField;
     
-    private string typeCompteField;
+    private string descriptionField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
+    
+    private System.DateTime dateMajField;
+    
+    private bool dateMajFieldSpecified;
     
     private int indiceField;
     
@@ -99,29 +103,29 @@ public partial class ComptesCompte {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Mail {
+    public string Libelle {
         get {
-            return this.mailField;
+            return this.libelleField;
         }
         set {
-            this.mailField = value;
+            this.libelleField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string TypeCompte {
+    public string Description {
         get {
-            return this.typeCompteField;
+            return this.descriptionField;
         }
         set {
-            this.typeCompteField = value;
+            this.descriptionField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime DateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -131,13 +135,35 @@ public partial class ComptesCompte {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime DateMaj {
         get {
             return this.dateMajField;
         }
         set {
             this.dateMajField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateMajSpecified {
+        get {
+            return this.dateMajFieldSpecified;
+        }
+        set {
+            this.dateMajFieldSpecified = value;
         }
     }
     

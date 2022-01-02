@@ -22,22 +22,22 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class Connaissances {
+public partial class Comptes {
     
-    private ConnaissancesConnaissance[] connaissanceField;
+    private ComptesCompte[] compteField;
     
     private string versionField;
     
-    private string dateExportField;
+    private System.DateTime dateExportField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Connaissance")]
-    public ConnaissancesConnaissance[] Connaissance {
+    [System.Xml.Serialization.XmlElementAttribute("Compte")]
+    public ComptesCompte[] Compte {
         get {
-            return this.connaissanceField;
+            return this.compteField;
         }
         set {
-            this.connaissanceField = value;
+            this.compteField = value;
         }
     }
     
@@ -54,7 +54,7 @@ public partial class Connaissances {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateExport {
+    public System.DateTime DateExport {
         get {
             return this.dateExportField;
         }
@@ -70,17 +70,21 @@ public partial class Connaissances {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class ConnaissancesConnaissance {
+public partial class ComptesCompte {
     
     private string codeField;
     
-    private string libelleField;
+    private string mailField;
     
-    private string descriptionField;
+    private string typeCompteField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
+    
+    private System.DateTime dateMajField;
+    
+    private bool dateMajFieldSpecified;
     
     private int indiceField;
     
@@ -99,29 +103,29 @@ public partial class ConnaissancesConnaissance {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Libelle {
+    public string Mail {
         get {
-            return this.libelleField;
+            return this.mailField;
         }
         set {
-            this.libelleField = value;
+            this.mailField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Description {
+    public string TypeCompte {
         get {
-            return this.descriptionField;
+            return this.typeCompteField;
         }
         set {
-            this.descriptionField = value;
+            this.typeCompteField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime DateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -131,13 +135,35 @@ public partial class ConnaissancesConnaissance {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime DateMaj {
         get {
             return this.dateMajField;
         }
         set {
             this.dateMajField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateMajSpecified {
+        get {
+            return this.dateMajFieldSpecified;
+        }
+        set {
+            this.dateMajFieldSpecified = value;
         }
     }
     

@@ -22,22 +22,22 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class Parametres {
+public partial class Connaissances {
     
-    private ParametresParametre[] parametreField;
+    private ConnaissancesConnaissance[] connaissanceField;
     
     private string versionField;
     
-    private string dateExportField;
+    private System.DateTime dateExportField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Parametre")]
-    public ParametresParametre[] Parametre {
+    [System.Xml.Serialization.XmlElementAttribute("Connaissance")]
+    public ConnaissancesConnaissance[] Connaissance {
         get {
-            return this.parametreField;
+            return this.connaissanceField;
         }
         set {
-            this.parametreField = value;
+            this.connaissanceField = value;
         }
     }
     
@@ -54,7 +54,7 @@ public partial class Parametres {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateExport {
+    public System.DateTime DateExport {
         get {
             return this.dateExportField;
         }
@@ -70,17 +70,21 @@ public partial class Parametres {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class ParametresParametre {
+public partial class ConnaissancesConnaissance {
     
     private string codeField;
     
     private string libelleField;
     
-    private string valeurField;
+    private string descriptionField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
+    
+    private System.DateTime dateMajField;
+    
+    private bool dateMajFieldSpecified;
     
     private int indiceField;
     
@@ -110,18 +114,18 @@ public partial class ParametresParametre {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Valeur {
+    public string Description {
         get {
-            return this.valeurField;
+            return this.descriptionField;
         }
         set {
-            this.valeurField = value;
+            this.descriptionField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime DateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -131,13 +135,35 @@ public partial class ParametresParametre {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime DateMaj {
         get {
             return this.dateMajField;
         }
         set {
             this.dateMajField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateMajSpecified {
+        get {
+            return this.dateMajFieldSpecified;
+        }
+        set {
+            this.dateMajFieldSpecified = value;
         }
     }
     

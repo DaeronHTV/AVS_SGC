@@ -22,22 +22,22 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class Services {
+public partial class Parametres {
     
-    private ServicesService[] serviceField;
+    private ParametresParametre[] parametreField;
     
     private string versionField;
     
-    private string dateExportField;
+    private System.DateTime dateExportField;
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Service")]
-    public ServicesService[] Service {
+    [System.Xml.Serialization.XmlElementAttribute("Parametre")]
+    public ParametresParametre[] Parametre {
         get {
-            return this.serviceField;
+            return this.parametreField;
         }
         set {
-            this.serviceField = value;
+            this.parametreField = value;
         }
     }
     
@@ -54,7 +54,7 @@ public partial class Services {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateExport {
+    public System.DateTime DateExport {
         get {
             return this.dateExportField;
         }
@@ -70,19 +70,66 @@ public partial class Services {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class ServicesService {
+public partial class ParametresParametre : ObjetBase {
+    
+    private string valeurField;
+    
+    private int indiceField;
+    
+    private bool indiceFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string Valeur {
+        get {
+            return this.valeurField;
+        }
+        set {
+            this.valeurField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public int Indice {
+        get {
+            return this.indiceField;
+        }
+        set {
+            this.indiceField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool IndiceSpecified {
+        get {
+            return this.indiceFieldSpecified;
+        }
+        set {
+            this.indiceFieldSpecified = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class ObjetBase {
     
     private string codeField;
     
     private string libelleField;
     
-    private string dateInsertionField;
+    private System.DateTime dateInsertionField;
     
-    private string dateMajField;
+    private bool dateInsertionFieldSpecified;
     
-    private int indiceField;
+    private System.DateTime dateMajField;
     
-    private bool indiceFieldSpecified;
+    private bool dateMajFieldSpecified;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -108,7 +155,7 @@ public partial class ServicesService {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateInsertion {
+    public System.DateTime DateInsertion {
         get {
             return this.dateInsertionField;
         }
@@ -118,8 +165,19 @@ public partial class ServicesService {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool DateInsertionSpecified {
+        get {
+            return this.dateInsertionFieldSpecified;
+        }
+        set {
+            this.dateInsertionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string DateMaj {
+    public System.DateTime DateMaj {
         get {
             return this.dateMajField;
         }
@@ -129,24 +187,13 @@ public partial class ServicesService {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public int Indice {
-        get {
-            return this.indiceField;
-        }
-        set {
-            this.indiceField = value;
-        }
-    }
-    
-    /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool IndiceSpecified {
+    public bool DateMajSpecified {
         get {
-            return this.indiceFieldSpecified;
+            return this.dateMajFieldSpecified;
         }
         set {
-            this.indiceFieldSpecified = value;
+            this.dateMajFieldSpecified = value;
         }
     }
 }
