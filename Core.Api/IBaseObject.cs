@@ -10,6 +10,6 @@ namespace Core.Api
 
         DateTime Dateinsertion { get; set; }
 
-        DateTime? Datemaj { get; set; }
+        DateTime Datemaj { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace SGCServeur.Models.Bdd
         public string Nomascii { get; set; }
         public string Mail { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime? Datemaj { get; set; }
+        public DateTime Datemaj { get; set; }
         public DateTime Datedebutvalidite { get; set; }
         public DateTime? Datefinvalidite { get; set; }
 

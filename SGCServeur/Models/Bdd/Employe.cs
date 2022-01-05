@@ -27,7 +27,7 @@ namespace SGCServeur.Models.Bdd
         public string Telephone { get; set; }
         public string Mail { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime? Datemaj { get; set; }
+        public DateTime Datemaj { get; set; }
         public DateTime Datedebutvaldite { get; set; }
         public DateTime? Datefinvaldite { get; set; }
 

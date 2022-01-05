@@ -6,13 +6,13 @@ namespace SGCServeur.Models.Bdd
     {
         private Emploi currentEmploi = null;
 
-        Emploi CurrentEmploi
+        public Emploi CurrentEmploi
         {
             get
             {
                 if(currentEmploi == null)
                 {
-                    currentEmploi = Employeemplois.Where(emploi => emploi.Datefin == null).FirstOrDefault().Emploi;
+                    currentEmploi = Employeemplois.Where(emploi => emploi.Datefin == null).FirstOrDefault()?.Emploi;
                 }
                 return currentEmploi;
             }

@@ -3,44 +3,49 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Api.DAO;
 using System;
+using System.Linq;
 
 namespace SGCServeur.LibrairieBdd
 {
-    public class CompteDAO : IDAO<Compte>
+    public class CompteDAO : CommonDAO<Compte>
     {
-        public CompteDAO(SGCContext context)
-        {
+        private SGCContext _context;
 
+        public CompteDAO(SGCContext context): base(context)
+        {
+            this._context = context;
         }
 
-        public Task<bool> Contains(Guid id)
+        public override async Task<bool> Create(Compte objet)
         {
-            throw new NotImplementedException();
+            await base.Create(objet);
+            var test = await _context.Employes.FindAsync(new object[]{Guid.Parse("74ad4f0c-5f5a-4e19-9c2c-7d7b1c5b2311")});
+            await context.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> Create(Compte objet)
+        public override async Task<bool> Update(Compte objet, Guid id)
         {
-            throw new System.NotImplementedException();
+            Compte objetData;
+            if (!(await Contains(id)))
+            {
+                objetData = new Compte();
+            }
+            else
+            {
+                objetData = await Read(id);
+            }
+            objetData.Mail = objet.Mail;
+            //TODO Faire la gestion des emplois, competences et connaissances
+            objetData.Datemaj = DateTime.UtcNow;
+            _context.Comptes.Update(objetData);
+            await context.SaveChangesAsync();
+            return true;
         }
 
-        public Task<Compte> Delete(Guid id)
+        public override IList<Compte> ReadAll(int nbPerPage = 10)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<Compte> Read(Guid id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IList<Compte> ReadAll(int nbPerPage = 10)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> Update(Compte objet, Guid id)
-        {
-            throw new NotImplementedException();
+            return _context.Comptes.ToList();
         }
     }
 }

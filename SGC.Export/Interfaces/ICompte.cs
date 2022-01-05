@@ -5,21 +5,15 @@ namespace SGC.Export.Interfaces
 {
     public interface IComptes: IXmlBase
     {
-        IEnumerable<ICompte> Comptes { get; set; }
+        IEnumerable<ICompte> ListComptes { get; set; }
     }
 
-    public interface ICompte
+    public interface ICompte: IBdDate
     {
         string Code { get; set; }
 
         string Mail { get; set; }
 
-        int Indice { get; set; }
-
-        TypeCompteEnum TypeCompte { get; set; }
-
-        DateTime DateInsertion { get; set; }
-
-        DateTime DateMaj { get; set; }
+        string TypeCompte { get; set; } //TODO Transformer en enum
     }
 }

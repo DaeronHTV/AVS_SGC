@@ -8,24 +8,23 @@ namespace SGC.Export.Interfaces
         IEnumerable<IEmploye> Employes { get; set; }
     }
 
-    public interface IEmploye
+    public interface IEmploye: IObjetBase
     {
-        string Code { get; set; }
-
-        string Libelle { get; set; }
-
         string Description { get; set; }
-
-        DateTime DateInsertion { get; set; }
-
-        DateTime DateMaj { get; set; }
 
         ICompte Compte { get; set; }
 
         IEnumerable<IEmploi> Emplois { get; set; }
 
-        IEnumerable<ICompetence> Competences { get; set; }
+        IEnumerable<IConComCommon> Competences { get; set; }
 
-        IEnumerable<IConnaissance> Connaissances { get; set; }
+        IEnumerable<IConComCommon> Connaissances { get; set; }
+    }
+
+    public interface IEmploi: IObjetEmploi
+    {
+        public DateTime DateDebut { get; set; }
+
+        public DateTime DateFin { get; set; }
     }
 }

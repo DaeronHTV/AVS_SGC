@@ -18,7 +18,7 @@ namespace SGCServeur.Models.Bdd
         public string Description { get; set; }
         public string Color { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime? Datemaj { get; set; }
+        public DateTime Datemaj { get; set; }
         public DateTime Datedebutvalidite { get; set; }
         public DateTime? Datefinvalidite { get; set; }
 

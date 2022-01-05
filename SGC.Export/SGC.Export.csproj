@@ -7,7 +7,7 @@
   <ItemGroup>
     <Folder Include="Formation\" />
     <Folder Include="Parametrage\FichierClasses\" />
-    <Folder Include="Structure\Partial\" />
+    <Folder Include="SGC\Partial\" />
   </ItemGroup>
 
 </Project>

@@ -29,10 +29,14 @@
 
   <ItemGroup>
     <Folder Include="Models\Results\" />
+    <Folder Include="Services\objet\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Api\Core.Api.csproj" />
+    <ProjectReference Include="..\SGC.Export\SGC.Export.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -6,7 +6,7 @@
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public abstract partial class ServiceBase
+    public partial class ServiceBase
     {
 
         private string codeField;

@@ -44,10 +44,7 @@
 										<xs:element name="Emploi" minOccurs="1" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:complexContent>
-													<xs:extension base="ConComBase">
-														<xs:sequence>
-															<xs:element name="ServiceSet" type="ServiceBase" minOccurs="0" maxOccurs="1"/>
-														</xs:sequence>
+													<xs:extension base="ObjetEmploi">
 														<xs:attribute name="dateDebut" type="xs:dateTime" use="required"/>
 														<xs:attribute name="dateFin" type="xs:dateTime" use="required"/>
 													</xs:extension>

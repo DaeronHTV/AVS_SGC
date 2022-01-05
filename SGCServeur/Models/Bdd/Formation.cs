@@ -20,7 +20,7 @@ namespace SGCServeur.Models.Bdd
         public string Tags { get; set; }
         public string Niveau { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime? Datemaj { get; set; }
+        public DateTime Datemaj { get; set; }
         public DateTime Datedebutvalidite { get; set; }
         public DateTime? Datefinvalidite { get; set; }
 

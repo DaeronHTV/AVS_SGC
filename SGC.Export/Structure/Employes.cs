@@ -385,27 +385,12 @@ namespace SGC.Export.Structure
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class EmployesEmployeEmploi : ConComBase
+    public partial class EmployesEmployeEmploi : ObjetEmploi
     {
-
-        private ServiceBase serviceSetField;
 
         private System.DateTime dateDebutField;
 
         private System.DateTime dateFinField;
-
-        /// <remarks/>
-        public ServiceBase ServiceSet
-        {
-            get
-            {
-                return this.serviceSetField;
-            }
-            set
-            {
-                this.serviceSetField = value;
-            }
-        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -435,5 +420,4 @@ namespace SGC.Export.Structure
             }
         }
     }
-
 }

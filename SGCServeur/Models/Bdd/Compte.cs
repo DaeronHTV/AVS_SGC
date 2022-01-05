@@ -20,7 +20,7 @@ namespace SGCServeur.Models.Bdd
         public string Password { get; set; }
         public string Typecompte { get; set; }
         public DateTime Dateinsertion { get; set; }
-        public DateTime? Datemaj { get; set; }
+        public DateTime Datemaj { get; set; }
         public DateTime Datedebutvaldite { get; set; }
         public DateTime? Datefinvaldite { get; set; }
 

@@ -9,9 +9,12 @@ namespace Core.Api.Config
 
         public static MailConnection MailConnection { get; private set; }
 
+        public static string Version { get; private set; }
+
         public static void Initialisation(IConfiguration configuration)
         {
             ApiInformation = configuration.GetSection(nameof(OpenApiInfo)).Get<OpenApiInfo>();
+            Version = configuration.GetSection("Version").Value;
         }
     }
 }

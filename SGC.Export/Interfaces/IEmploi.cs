@@ -1,7 +1,9 @@
-﻿namespace SGC.Export.Interfaces
+﻿using System.Collections.Generic;
+
+namespace SGC.Export.Interfaces
 {
-    public interface IEmploi
+    public interface IEmplois: IXmlBase
     {
-         
+        IEnumerable<IObjetEmploi> Employes { get; set; }
     }
 }

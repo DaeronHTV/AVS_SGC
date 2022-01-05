@@ -38,7 +38,7 @@ namespace SGCServeur.Models.Bdd
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {

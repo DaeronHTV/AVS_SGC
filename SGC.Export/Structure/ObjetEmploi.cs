@@ -1,4 +1,6 @@
-﻿namespace SGC.Export.Structure
+﻿using SGC.Export.Common;
+
+namespace SGC.Export.Structure
 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]

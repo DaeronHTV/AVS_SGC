@@ -57,5 +57,23 @@ namespace SGCServeur.Controllers.Structure
             }*/
             return await dao.Delete(id);
         }
+
+        [HttpGet]
+        [Description("Give an employe from the database associated to the Id")]
+        [SwaggerResponse(HttpStatusCode.NotFound, typeof(NotFoundResult), Description = "The employe to get wasn't found")]
+        [SwaggerResponse(HttpStatusCode.BadRequest, typeof(BadRequestResult), Description = "The id is not given or incorrect !")]
+        [SwaggerResponse(HttpStatusCode.OK, typeof(Compte), Description = "The account found with the id")]
+        public async Task<ActionResult<Compte>> GetById([FromQuery][Description("Id of the employe to get")] Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                return new BadRequestResult();
+            }
+            //if (!dao.Contains(id))
+            //{
+            //    return NotFound("The employe to delete wasn't found");
+            //}
+            return await dao.Read(id);
+        }
     }
 }
