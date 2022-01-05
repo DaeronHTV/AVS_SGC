@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGCServeur", "SGCServeur\SGCServeur.csproj", "{A6982331-00BB-4C4C-BA75-6FDBC2958E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Api", "Core.Api\Core.Api.csproj", "{33065F21-F892-402B-A334-D276B5F0DB56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Api", "Core.Api\Core.Api.csproj", "{33065F21-F892-402B-A334-D276B5F0DB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGC.Export", "SGC.Export\SGC.Export.csproj", "{260B5156-9C18-4685-9569-E8EEE2B56A21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{33065F21-F892-402B-A334-D276B5F0DB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33065F21-F892-402B-A334-D276B5F0DB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33065F21-F892-402B-A334-D276B5F0DB56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260B5156-9C18-4685-9569-E8EEE2B56A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260B5156-9C18-4685-9569-E8EEE2B56A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260B5156-9C18-4685-9569-E8EEE2B56A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260B5156-9C18-4685-9569-E8EEE2B56A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

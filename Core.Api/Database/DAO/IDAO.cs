@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Core.Api.Database.DAO
+namespace Core.Api.DAO
 {
     /// <summary>
     /// 
