@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mes Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj": {}
+    "D:\\Mes_Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj": {}
   },
   "projects": {
-    "D:\\Mes Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj": {
+    "D:\\Mes_Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mes Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj",
+        "projectUniqueName": "D:\\Mes_Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj",
         "projectName": "SGC.Export",
-        "projectPath": "D:\\Mes Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj",
+        "projectPath": "D:\\Mes_Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\SGC.Export.csproj",
         "packagesPath": "C:\\Users\\Avanzino.A\\.nuget\\packages\\",
-        "outputPath": "D:\\Mes Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\obj\\",
+        "outputPath": "D:\\Mes_Travaux\\Repositories\\sgc-m2miage\\SGC.Export\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Avanzino.A\\AppData\\Roaming\\NuGet\\NuGet.Config",

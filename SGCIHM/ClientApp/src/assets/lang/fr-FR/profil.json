@@ -1,0 +1,12 @@
+[
+   {
+      "id": 0,
+      "name": "Mon Profile",
+      "route": "/TODO"
+   },
+   {
+      "id": 1,
+      "name": "Se Deconnecter",
+      "route": "/TODO"
+   }
+]
